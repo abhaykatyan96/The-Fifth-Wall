@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --brand-ivory: #F6F3ED;
+    --brand-cream: #EAE3D8;
+    --brand-gold: #B69A69;
+    --brand-gold-light: #D4C39E;
+    --brand-gold-dark: #8E7444;
+    --brand-charcoal: #242321;
+    --brand-black: #151515;
+    --brand-beige: #D9CFC0;
+    --brand-white: #FFFFFF;
+  }
+
+  * {
+    border-color: #EAE3D8;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--brand-ivory);
+    color: var(--brand-charcoal);
+  }
+
+  body {
+    background-color: var(--brand-ivory);
+    color: var(--brand-charcoal);
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif, .editorial-heading {
+    font-family: var(--font-cormorant), Georgia, serif;
+    letter-spacing: -0.01em;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Luxury Aesthetics & Micro-interactions */
+.gold-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #B69A69;
+  color: #151515;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  padding: 0.875rem 2rem;
+  border: 1px solid #B69A69;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.gold-button:hover {
+  background-color: #8E7444;
+  border-color: #8E7444;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(182, 154, 105, 0.3);
+}
+
+.gold-button-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: #151515;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  padding: 0.875rem 2rem;
+  border: 1px solid #242321;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.gold-button-outline:hover {
+  background-color: #242321;
+  color: #F6F3ED;
+  transform: translateY(-2px);
+}
+
+.section-kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #B69A69;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* Glassmorphism Navigation */
+.glass-nav-scrolled {
+  background-color: rgba(246, 243, 237, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(234, 227, 216, 0.8);
+  box-shadow: 0 4px 20px -2px rgba(21, 21, 21, 0.04);
+}
+
+.glass-nav-transparent {
+  background-color: rgba(21, 21, 21, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F6F3ED;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9CFC0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B69A69;
 }
