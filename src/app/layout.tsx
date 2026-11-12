@@ -27,6 +27,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('http://localhost:3000'),
   title: 'THE FIFTH WALL — Lighting. Interiors. Beyond.',
   description:
     'International luxury lighting, statement chandeliers, architectural wall sconces, and curated interior décor for extraordinary living.',
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     siteName: 'THE FIFTH WALL',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85',
+        url: '/images/hero/hero-rings-chandelier.jpg',
         width: 1200,
         height: 630,
         alt: 'THE FIFTH WALL Luxury Lighting',
@@ -58,7 +59,8 @@ export const metadata: Metadata = {
     type: 'website',
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/images/logo-icon.png',
+    apple: '/images/logo-icon.png',
   },
 };
 
@@ -69,11 +71,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className="min-h-screen flex flex-col bg-[#F6F3ED] text-[#242321] selection:bg-[#B69A69] selection:text-[#151515]">
+      <body className="min-h-screen flex flex-col bg-[#0A0A0A] text-[#F5EEDB] selection:bg-[#C5A059] selection:text-[#0A0A0A]">
         <AuthProvider>
           <WishlistProvider>
             <CartProvider>
-              <Suspense fallback={<div className="h-20 bg-[#151515]" />}>
+              <Suspense fallback={<div className="h-20 bg-[#0A0A0A]" />}>
                 <Navbar />
               </Suspense>
               <main className="flex-1">{children}</main>

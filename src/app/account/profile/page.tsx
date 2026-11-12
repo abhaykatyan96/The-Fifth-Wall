@@ -41,7 +41,7 @@ export default function ProfilePage() {
 
   if (isLoading || !user) {
     return (
-      <div className="pt-32 pb-24 bg-[#F6F3ED] min-h-screen text-center text-xs text-[#78746D]">
+      <div className="pt-32 pb-24 bg-[#0A0A0A] min-h-screen text-center text-xs text-[#9E9788]">
         Verifying client session...
       </div>
     );
@@ -53,20 +53,20 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="pt-28 pb-24 bg-[#F6F3ED] min-h-screen">
+    <div className="pt-28 pb-24 bg-[#0A0A0A] text-[#F5EEDB] min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="pb-8 border-b border-[#EAE3D8] mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div className="pb-8 border-b border-[#2E261B] mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <span className="section-kicker">Client Residence Portal</span>
-            <h1 className="font-serif text-3xl sm:text-5xl text-[#151515] font-light mt-1">
-              Account <em>Dashboard.</em>
+            <h1 className="font-serif text-3xl sm:text-5xl text-[#F5EEDB] font-light mt-1">
+              Account <em className="italic text-[#E5C378]">Dashboard.</em>
             </h1>
           </div>
           <button
             type="button"
             onClick={handleLogout}
-            className="text-xs uppercase tracking-wider text-[#b91c1c] hover:underline flex items-center gap-1.5 self-start sm:self-end font-semibold"
+            className="text-xs uppercase tracking-wider text-[#EF4444] hover:underline flex items-center gap-1.5 self-start sm:self-end font-semibold"
           >
             <LogOut className="w-3.5 h-3.5" />
             <span>Sign Out</span>
@@ -75,17 +75,17 @@ export default function ProfilePage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Navigation Sidebar (4 cols) */}
-          <aside className="lg:col-span-4 bg-white p-6 border border-[#EAE3D8] rounded-sm shadow-sm space-y-4">
-            <div className="flex items-center space-x-3 pb-6 border-b border-[#EAE3D8]">
-              <div className="w-12 h-12 rounded-full bg-[#B69A69] text-white flex items-center justify-center font-serif text-xl">
+          <aside className="lg:col-span-4 bg-[#141414] p-6 border border-[#2E261B] rounded-sm shadow-xl space-y-4">
+            <div className="flex items-center space-x-3 pb-6 border-b border-[#2E261B]">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#C5A059] to-[#D4AF37] text-[#0A0A0A] font-bold flex items-center justify-center font-serif text-xl">
                 {user.full_name?.charAt(0) || user.email.charAt(0).toUpperCase()}
               </div>
               <div className="overflow-hidden">
-                <h3 className="font-serif text-lg text-[#151515] truncate font-medium">
+                <h3 className="font-serif text-lg text-[#F5EEDB] truncate font-medium">
                   {user.full_name || 'Valued Client'}
                 </h3>
-                <p className="text-xs text-[#78746D] truncate">{user.email}</p>
-                <span className="inline-block bg-[#F6F3ED] text-[#B69A69] text-[10px] uppercase font-semibold px-2 py-0.5 mt-1 border border-[#EAE3D8]">
+                <p className="text-xs text-[#9E9788] truncate">{user.email}</p>
+                <span className="inline-block bg-[#1A1812] text-[#C5A059] text-[10px] uppercase font-semibold px-2 py-0.5 mt-1 border border-[#2E261B]">
                   {user.role === 'admin' ? 'Curator / Admin' : 'Private Client'}
                 </span>
               </div>
@@ -97,8 +97,8 @@ export default function ProfilePage() {
                 onClick={() => setActiveTab('profile')}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-sm transition text-left font-medium ${
                   activeTab === 'profile'
-                    ? 'bg-[#F6F3ED] text-[#B69A69] font-bold border-l-2 border-[#B69A69]'
-                    : 'text-[#555] hover:bg-[#F6F3ED] hover:text-[#151515]'
+                    ? 'bg-[#1C1812] text-[#C5A059] font-bold border-l-2 border-[#C5A059]'
+                    : 'text-[#9E9788] hover:bg-[#181818] hover:text-[#F5EEDB]'
                 }`}
               >
                 <User className="w-4 h-4" />
@@ -110,15 +110,15 @@ export default function ProfilePage() {
                 onClick={() => setActiveTab('orders')}
                 className={`w-full flex items-center justify-between px-4 py-3 rounded-sm transition text-left font-medium ${
                   activeTab === 'orders'
-                    ? 'bg-[#F6F3ED] text-[#B69A69] font-bold border-l-2 border-[#B69A69]'
-                    : 'text-[#555] hover:bg-[#F6F3ED] hover:text-[#151515]'
+                    ? 'bg-[#1C1812] text-[#C5A059] font-bold border-l-2 border-[#C5A059]'
+                    : 'text-[#9E9788] hover:bg-[#181818] hover:text-[#F5EEDB]'
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <Package className="w-4 h-4" />
                   <span>Order Consignments</span>
                 </div>
-                <span className="bg-[#EAE3D8] text-[#151515] text-[10px] px-2 py-0.5 rounded-full font-bold">
+                <span className="bg-[#1E1B15] border border-[#2E261B] text-[#C5A059] text-[10px] px-2 py-0.5 rounded-full font-bold">
                   {orders.length}
                 </span>
               </button>
@@ -128,8 +128,8 @@ export default function ProfilePage() {
                 onClick={() => setActiveTab('addresses')}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-sm transition text-left font-medium ${
                   activeTab === 'addresses'
-                    ? 'bg-[#F6F3ED] text-[#B69A69] font-bold border-l-2 border-[#B69A69]'
-                    : 'text-[#555] hover:bg-[#F6F3ED] hover:text-[#151515]'
+                    ? 'bg-[#1C1812] text-[#C5A059] font-bold border-l-2 border-[#C5A059]'
+                    : 'text-[#9E9788] hover:bg-[#181818] hover:text-[#F5EEDB]'
                 }`}
               >
                 <MapPin className="w-4 h-4" />
@@ -139,7 +139,7 @@ export default function ProfilePage() {
               {user.role === 'admin' && (
                 <Link
                   href="/admin/dashboard"
-                  className="w-full flex items-center gap-3 px-4 py-3 rounded-sm text-[#B69A69] hover:bg-[#F6F3ED] font-bold border-t border-[#EAE3D8] mt-2"
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-sm text-[#C5A059] hover:bg-[#1C1812] font-bold border-t border-[#2E261B] mt-2"
                 >
                   <ShieldCheck className="w-4 h-4" />
                   <span>Enter Admin Portal</span>
@@ -149,47 +149,47 @@ export default function ProfilePage() {
           </aside>
 
           {/* Tab Content (8 cols) */}
-          <div className="lg:col-span-8 bg-white p-6 sm:p-10 border border-[#EAE3D8] rounded-sm shadow-sm">
+          <div className="lg:col-span-8 bg-[#141414] p-6 sm:p-10 border border-[#2E261B] rounded-sm shadow-xl">
             {activeTab === 'profile' && (
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-serif text-2xl text-[#151515] mb-1">Personal Portfolio</h3>
-                  <p className="text-xs text-[#78746D]">
+                  <h3 className="font-serif text-2xl text-[#F5EEDB] mb-1">Personal Portfolio</h3>
+                  <p className="text-xs text-[#9E9788]">
                     Manage your identity and authentication credentials.
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                  <div className="p-4 bg-[#F6F3ED] border border-[#D9CFC0] rounded-sm">
-                    <span className="text-[#78746D] block uppercase tracking-wider text-[10px]">Client Name</span>
-                    <span className="text-[#151515] font-semibold text-sm mt-0.5 block">
+                  <div className="p-4 bg-[#181818] border border-[#2E261B] rounded-sm">
+                    <span className="text-[#9E9788] block uppercase tracking-wider text-[10px]">Client Name</span>
+                    <span className="text-[#F5EEDB] font-semibold text-sm mt-0.5 block">
                       {user.full_name || 'Not provided'}
                     </span>
                   </div>
 
-                  <div className="p-4 bg-[#F6F3ED] border border-[#D9CFC0] rounded-sm">
-                    <span className="text-[#78746D] block uppercase tracking-wider text-[10px]">Email Address</span>
-                    <span className="text-[#151515] font-semibold text-sm mt-0.5 block">{user.email}</span>
+                  <div className="p-4 bg-[#181818] border border-[#2E261B] rounded-sm">
+                    <span className="text-[#9E9788] block uppercase tracking-wider text-[10px]">Email Address</span>
+                    <span className="text-[#F5EEDB] font-semibold text-sm mt-0.5 block">{user.email}</span>
                   </div>
 
-                  <div className="p-4 bg-[#F6F3ED] border border-[#D9CFC0] rounded-sm">
-                    <span className="text-[#78746D] block uppercase tracking-wider text-[10px]">Phone Number</span>
-                    <span className="text-[#151515] font-semibold text-sm mt-0.5 block">
+                  <div className="p-4 bg-[#181818] border border-[#2E261B] rounded-sm">
+                    <span className="text-[#9E9788] block uppercase tracking-wider text-[10px]">Phone Number</span>
+                    <span className="text-[#F5EEDB] font-semibold text-sm mt-0.5 block">
                       {user.phone || '+91 98200 12345'}
                     </span>
                   </div>
 
-                  <div className="p-4 bg-[#F6F3ED] border border-[#D9CFC0] rounded-sm">
-                    <span className="text-[#78746D] block uppercase tracking-wider text-[10px]">Account Tier</span>
-                    <span className="text-[#B69A69] font-semibold text-sm mt-0.5 block uppercase">
+                  <div className="p-4 bg-[#181818] border border-[#2E261B] rounded-sm">
+                    <span className="text-[#9E9788] block uppercase tracking-wider text-[10px]">Account Tier</span>
+                    <span className="text-[#C5A059] font-semibold text-sm mt-0.5 block uppercase">
                       Private Collector
                     </span>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-[#EAE3D8] flex items-center justify-between text-xs">
-                  <span className="text-[#78746D]">Need to modify your registered details?</span>
-                  <Link href="/contact" className="text-[#B69A69] hover:underline font-medium">
+                <div className="pt-4 border-t border-[#2E261B] flex items-center justify-between text-xs">
+                  <span className="text-[#9E9788]">Need to modify your registered details?</span>
+                  <Link href="/contact" className="text-[#C5A059] hover:underline font-medium">
                     Contact Concierge
                   </Link>
                 </div>
@@ -199,15 +199,15 @@ export default function ProfilePage() {
             {activeTab === 'orders' && (
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-serif text-2xl text-[#151515] mb-1">Your Order Consignments</h3>
-                  <p className="text-xs text-[#78746D]">
+                  <h3 className="font-serif text-2xl text-[#F5EEDB] mb-1">Your Order Consignments</h3>
+                  <p className="text-xs text-[#9E9788]">
                     Track deliveries, download invoices, and inspect order histories.
                   </p>
                 </div>
 
                 {orders.length === 0 ? (
-                  <div className="py-16 text-center text-xs text-[#78746D] space-y-3">
-                    <Package className="w-10 h-10 text-[#B69A69] mx-auto opacity-70" />
+                  <div className="py-16 text-center text-xs text-[#9E9788] space-y-3">
+                    <Package className="w-10 h-10 text-[#C5A059] mx-auto opacity-70" />
                     <p>You haven&apos;t placed any orders yet.</p>
                     <Link href="/shop" className="gold-button inline-flex py-2.5 px-6 text-xs">
                       Discover Collection
@@ -218,34 +218,34 @@ export default function ProfilePage() {
                     {orders.map((ord) => (
                       <div
                         key={ord.id}
-                        className="p-5 border border-[#EAE3D8] rounded-sm hover:border-[#B69A69] transition space-y-3 text-xs"
+                        className="p-5 bg-[#181818] border border-[#2E261B] rounded-sm hover:border-[#C5A059] transition space-y-3 text-xs"
                       >
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[#EAE3D8] gap-2">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[#2E261B] gap-2">
                           <div>
-                            <span className="font-mono font-bold text-sm text-[#151515]">
+                            <span className="font-mono font-bold text-sm text-[#F5EEDB]">
                               {ord.order_number}
                             </span>
-                            <span className="text-[#78746D] ml-3">
+                            <span className="text-[#9E9788] ml-3">
                               {new Date(ord.created_at).toLocaleDateString('en-IN', { dateStyle: 'medium' })}
                             </span>
                           </div>
                           <div className="flex items-center gap-3">
-                            <span className="bg-[#ecfdf5] text-[#16a34a] font-semibold px-2 py-0.5 rounded-sm uppercase tracking-wider text-[10px]">
+                            <span className="bg-[#0D2818] border border-[#14532D] text-[#34D399] font-semibold px-2 py-0.5 rounded-sm uppercase tracking-wider text-[10px]">
                               {ord.status.replace('_', ' ')}
                             </span>
-                            <span className="font-serif font-bold text-sm text-[#151515]">
+                            <span className="font-serif font-bold text-sm text-[#F5EEDB]">
                               {formatINR(ord.total_in_paise)}
                             </span>
                           </div>
                         </div>
 
                         <div className="flex justify-between items-center pt-1">
-                          <span className="text-[#78746D]">
+                          <span className="text-[#9E9788]">
                             Destination: {ord.shipping_address.city}, {ord.shipping_address.state}
                           </span>
                           <Link
                             href={`/track-order?orderNumber=${ord.order_number}`}
-                            className="text-[#B69A69] font-medium hover:underline flex items-center gap-1"
+                            className="text-[#C5A059] font-medium hover:underline flex items-center gap-1"
                           >
                             <span>Track Consignment</span>
                             <ArrowRight className="w-3 h-3" />
@@ -261,21 +261,21 @@ export default function ProfilePage() {
             {activeTab === 'addresses' && (
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-serif text-2xl text-[#151515] mb-1">Saved Residences</h3>
-                  <p className="text-xs text-[#78746D]">
+                  <h3 className="font-serif text-2xl text-[#F5EEDB] mb-1">Saved Residences</h3>
+                  <p className="text-xs text-[#9E9788]">
                     Default addresses for white-glove architectural deliveries.
                   </p>
                 </div>
 
-                <div className="p-5 border border-[#B69A69] bg-[#F6F3ED] rounded-sm text-xs space-y-1 relative">
-                  <span className="absolute top-4 right-4 bg-[#B69A69] text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded-sm">
+                <div className="p-5 border border-[#C5A059] bg-[#181818] rounded-sm text-xs space-y-1 relative">
+                  <span className="absolute top-4 right-4 bg-[#C5A059] text-[#0A0A0A] text-[10px] uppercase font-bold px-2 py-0.5 rounded-sm">
                     Default
                   </span>
-                  <h4 className="font-serif text-base font-medium text-[#151515]">Primary Residence</h4>
-                  <p className="text-[#151515] font-medium">{user.full_name || 'Aditya Birla'}</p>
-                  <p className="text-[#555]">Penthouse 42, Oberoi Sky Heights, Worli Sea Face</p>
-                  <p className="text-[#555]">Mumbai, Maharashtra — 400018</p>
-                  <p className="text-[#78746D]">Phone: {user.phone || '+91 98200 12345'}</p>
+                  <h4 className="font-serif text-base font-medium text-[#F5EEDB]">Primary Residence</h4>
+                  <p className="text-[#F5EEDB] font-medium">{user.full_name || 'Aditya Birla'}</p>
+                  <p className="text-[#9E9788]">Penthouse 42, Oberoi Sky Heights, Worli Sea Face</p>
+                  <p className="text-[#9E9788]">Mumbai, Maharashtra — 400018</p>
+                  <p className="text-[#9E9788]">Phone: {user.phone || '+91 98200 12345'}</p>
                 </div>
               </div>
             )}

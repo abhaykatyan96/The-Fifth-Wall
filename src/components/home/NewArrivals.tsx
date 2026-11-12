@@ -18,22 +18,22 @@ export default function NewArrivals({ products }: NewArrivalsProps) {
   const newArrivals = products.filter((p) => p.is_new_arrival).slice(0, 4);
 
   return (
-    <section className="py-24 bg-[#F6F3ED] border-t border-[#EAE3D8]">
+    <section className="py-24 bg-[#0A0A0A] border-t border-[#2E261B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-[#EAE3D8] pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-[#2E261B] pb-8">
           <div>
             <div className="flex items-center gap-2">
               <span className="section-kicker mb-0">05 / Latest Additions</span>
-              <Sparkles className="w-3.5 h-3.5 text-[#B69A69]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#151515] font-light mt-1">
-              New <em>Arrivals.</em>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#F5EEDB] font-light mt-1">
+              New <em className="text-[#C5A059]">Arrivals.</em>
             </h2>
           </div>
 
           <Link
             href="/shop?sort=newest"
-            className="group inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-medium text-[#151515] hover:text-[#B69A69] transition mt-4 md:mt-0"
+            className="group inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-medium text-[#F5EEDB] hover:text-[#C5A059] transition mt-4 md:mt-0"
           >
             <span>View All Fresh Releases</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

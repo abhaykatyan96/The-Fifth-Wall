@@ -79,30 +79,30 @@ export default function SearchModal() {
     <div className="fixed inset-0 z-50 overflow-y-auto">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/75 backdrop-blur-md transition-opacity"
+        className="fixed inset-0 bg-black/85 backdrop-blur-md transition-opacity"
         onClick={() => setIsOpen(false)}
       />
 
       <div className="min-h-screen px-4 text-center flex items-start justify-center pt-20 sm:pt-28">
-        <div className="relative bg-[#F6F3ED] w-full max-w-3xl rounded-sm shadow-2xl p-6 sm:p-8 text-left border border-[#EAE3D8] z-10 animate-fadeIn">
+        <div className="relative bg-[#121212] w-full max-w-3xl rounded-sm shadow-2xl p-6 sm:p-8 text-left border border-[#2E261B] z-10 animate-fadeIn">
           {/* Header */}
-          <div className="flex items-center justify-between pb-6 border-b border-[#EAE3D8]">
+          <div className="flex items-center justify-between pb-6 border-b border-[#2E261B]">
             <div className="flex items-center gap-3 flex-1">
-              <Search className="w-5 h-5 text-[#B69A69]" />
+              <Search className="w-5 h-5 text-[#C5A059]" />
               <input
                 ref={inputRef}
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search luxury lighting, chandeliers, furniture, materials..."
-                className="w-full bg-transparent text-lg sm:text-xl font-serif text-[#151515] placeholder-[#999] focus:outline-none"
+                className="w-full bg-transparent text-lg sm:text-xl font-serif text-[#F5EEDB] placeholder-[#6E6759] focus:outline-none"
               />
-              {loading && <Loader2 className="w-5 h-5 text-[#B69A69] animate-spin" />}
+              {loading && <Loader2 className="w-5 h-5 text-[#C5A059] animate-spin" />}
             </div>
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="p-2 text-[#78746D] hover:text-[#151515] transition"
+              className="p-2 text-[#9E9788] hover:text-[#C5A059] transition"
               aria-label="Close search"
             >
               <X className="w-5 h-5" />
@@ -112,14 +112,14 @@ export default function SearchModal() {
           {/* Quick Suggestions */}
           {!query && (
             <div className="py-8">
-              <p className="text-xs uppercase tracking-widest text-[#B69A69] font-medium mb-3">Popular Inquiries</p>
+              <p className="text-xs uppercase tracking-widest text-[#C5A059] font-medium mb-3">Popular Inquiries</p>
               <div className="flex flex-wrap gap-2">
                 {quickTags.map((tag) => (
                   <button
                     key={tag}
                     type="button"
                     onClick={() => setQuery(tag)}
-                    className="px-3 py-1.5 bg-[#EAE3D8] hover:bg-[#B69A69] hover:text-[#151515] text-[#242321] text-xs transition rounded-sm font-medium"
+                    className="px-3 py-1.5 bg-[#1A1812] hover:bg-[#C5A059] hover:text-[#0A0A0A] text-[#E5C378] border border-[#2E261B] text-xs transition rounded-sm font-medium"
                   >
                     {tag}
                   </button>
@@ -132,8 +132,8 @@ export default function SearchModal() {
           {query && (
             <div className="py-6 max-h-[60vh] overflow-y-auto space-y-4">
               {results.length === 0 && !loading ? (
-                <div className="text-center py-12 text-[#78746D]">
-                  <p className="font-serif text-lg text-[#151515]">No pieces matching &ldquo;{query}&rdquo;</p>
+                <div className="text-center py-12 text-[#9E9788]">
+                  <p className="font-serif text-lg text-[#F5EEDB]">No pieces matching &ldquo;{query}&rdquo;</p>
                   <p className="text-xs mt-1">Try exploring by category or contact our studio for custom commissions.</p>
                 </div>
               ) : (
@@ -142,9 +142,9 @@ export default function SearchModal() {
                     key={product.id}
                     href={`/products/${product.slug}`}
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center space-x-4 p-3 hover:bg-[#EAE3D8]/60 transition rounded-sm border border-transparent hover:border-[#D9CFC0]"
+                    className="flex items-center space-x-4 p-3 hover:bg-[#1A1812] transition rounded-sm border border-transparent hover:border-[#2E261B]"
                   >
-                    <div className="w-16 h-20 bg-[#EAE3D8] rounded-sm overflow-hidden flex-shrink-0">
+                    <div className="w-16 h-20 bg-[#181818] rounded-sm overflow-hidden flex-shrink-0 border border-[#2E261B]">
                       <img
                         src={product.primary_image_url}
                         alt={product.name}
@@ -152,13 +152,13 @@ export default function SearchModal() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] uppercase tracking-wider text-[#B69A69]">{product.style || 'The Fifth Wall'}</p>
-                      <h4 className="font-serif text-base text-[#151515] truncate font-medium">{product.name}</h4>
-                      <p className="text-xs text-[#78746D] truncate mt-0.5">{product.finish} · {product.material}</p>
+                      <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">{product.style || 'The Fifth Wall'}</p>
+                      <h4 className="font-serif text-base text-[#F5EEDB] truncate font-medium">{product.name}</h4>
+                      <p className="text-xs text-[#9E9788] truncate mt-0.5">{product.finish} · {product.material}</p>
                     </div>
                     <div className="text-right">
-                      <span className="font-medium text-sm text-[#151515]">{formatINR(product.price_in_paise)}</span>
-                      <div className="flex items-center justify-end text-xs text-[#B69A69] mt-1 gap-1">
+                      <span className="font-medium text-sm text-[#F5EEDB]">{formatINR(product.price_in_paise)}</span>
+                      <div className="flex items-center justify-end text-xs text-[#C5A059] mt-1 gap-1">
                         <span>View</span>
                         <ArrowRight className="w-3 h-3" />
                       </div>

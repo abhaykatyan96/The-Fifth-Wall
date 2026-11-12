@@ -108,8 +108,8 @@ export async function sendOrderConfirmationEmail(order: Order) {
               <tr>
                 <td style="padding-top: 40px; text-align: center; color: #888; font-size: 12px; border-top: 1px solid #eae3d8; margin-top: 30px;">
                   <p style="margin: 0 0 5px 0;">THE FIFTH WALL SHOWROOM</p>
-                  <p style="margin: 0 0 5px 0;">1/803, Sector 1, Gomti Nagar Vistar, Lucknow</p>
-                  <p style="margin: 0;">Mon – Sat, 10:30 am – 8:00 pm | studio@thefifthwall.in</p>
+                  <p style="margin: 0 0 5px 0;">E1/803, Vardan Khand, Sector 1, Gomti Nagar, Lucknow, UP 226010</p>
+                  <p style="margin: 0;">Mon – Sat, 10:30 am – 8:00 pm | +91 91 98216 699 | studio@thefifthwall.in</p>
                 </td>
               </tr>
             </table>

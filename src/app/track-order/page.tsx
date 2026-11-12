@@ -66,20 +66,20 @@ function TrackOrderContent() {
   };
 
   return (
-    <div className="pt-28 pb-24 bg-[#F6F3ED] min-h-screen">
+    <div className="pt-28 pb-24 bg-[#0A0A0A] text-[#F5EEDB] min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-xl mx-auto mb-12 space-y-3">
           <span className="section-kicker">Consignment Status</span>
-          <h1 className="font-serif text-3xl sm:text-5xl text-[#151515] font-light">
-            Track Your <em>Order.</em>
+          <h1 className="font-serif text-3xl sm:text-5xl text-[#F5EEDB] font-light">
+            Track Your <em className="italic text-[#E5C378]">Order.</em>
           </h1>
-          <p className="text-xs sm:text-sm text-[#78746D] font-light leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#9E9788] font-light leading-relaxed">
             Enter your order reference number (e.g. TFW-2026-XXXX) or order ID to view live transit milestones.
           </p>
         </div>
 
         {/* Search Bar */}
-        <div className="bg-white p-6 sm:p-8 rounded-sm border border-[#EAE3D8] shadow-sm mb-10 max-w-2xl mx-auto">
+        <div className="bg-[#141414] p-6 sm:p-8 rounded-sm border border-[#2E261B] shadow-2xl mb-10 max-w-2xl mx-auto">
           <form onSubmit={handleSearch} className="flex gap-3">
             <div className="relative flex-1">
               <input
@@ -88,7 +88,7 @@ function TrackOrderContent() {
                 value={orderQuery}
                 onChange={(e) => setOrderQuery(e.target.value.toUpperCase())}
                 placeholder="Enter Order Number (e.g. TFW-2026-8910)"
-                className="w-full bg-[#F6F3ED] border border-[#D9CFC0] text-xs px-4 py-3 uppercase focus:outline-none focus:border-[#B69A69] rounded-sm font-mono"
+                className="w-full bg-[#181818] border border-[#2E261B] text-xs px-4 py-3 uppercase text-[#F5EEDB] placeholder-[#6E6759] focus:outline-none focus:border-[#C5A059] rounded-sm font-mono"
               />
             </div>
             <button
@@ -102,7 +102,7 @@ function TrackOrderContent() {
           </form>
 
           {error && (
-            <div className="mt-4 p-3 bg-[#fef2f2] text-[#b91c1c] text-xs rounded-sm flex items-center gap-2 border border-[#fecaca]">
+            <div className="mt-4 p-3 bg-[#2A1215] text-[#F87171] text-xs rounded-sm flex items-center gap-2 border border-[#7F1D1D]">
               <AlertCircle className="w-4 h-4 flex-shrink-0" />
               <span>{error}</span>
             </div>
@@ -111,24 +111,24 @@ function TrackOrderContent() {
 
         {/* Live Order Timeline */}
         {order && (
-          <div className="bg-white border border-[#EAE3D8] rounded-sm p-6 sm:p-10 shadow-sm space-y-8 animate-fadeIn">
+          <div className="bg-[#141414] border border-[#2E261B] rounded-sm p-6 sm:p-10 shadow-2xl space-y-8 animate-fadeIn">
             {/* Header Status */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#EAE3D8] gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#2E261B] gap-4">
               <div>
-                <span className="text-[10px] uppercase tracking-widest text-[#B69A69] font-medium block">
+                <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-medium block">
                   Reference: {order.order_number}
                 </span>
-                <h2 className="font-serif text-2xl text-[#151515] font-light mt-0.5">
-                  Status: <span className="capitalize text-[#B69A69]">{order.status.replace('_', ' ')}</span>
+                <h2 className="font-serif text-2xl text-[#F5EEDB] font-light mt-0.5">
+                  Status: <span className="capitalize text-[#C5A059]">{order.status.replace('_', ' ')}</span>
                 </h2>
-                <p className="text-xs text-[#78746D] mt-1">Placed on {new Date(order.created_at).toLocaleDateString('en-IN', { dateStyle: 'long' })}</p>
+                <p className="text-xs text-[#9E9788] mt-1">Placed on {new Date(order.created_at).toLocaleDateString('en-IN', { dateStyle: 'long' })}</p>
               </div>
 
               {order.tracking_number && (
-                <div className="bg-[#F6F3ED] p-3 rounded-sm border border-[#D9CFC0] text-right sm:text-left text-xs">
-                  <span className="text-[#78746D] block uppercase text-[10px]">Courier Partner</span>
-                  <span className="font-medium text-[#151515]">{order.courier_partner || 'BlueDart Luxury Express'}</span>
-                  <span className="text-[#B69A69] font-mono block mt-0.5">Waybill: {order.tracking_number}</span>
+                <div className="bg-[#181818] p-3 rounded-sm border border-[#2E261B] text-right sm:text-left text-xs">
+                  <span className="text-[#9E9788] block uppercase text-[10px]">Courier Partner</span>
+                  <span className="font-medium text-[#F5EEDB]">{order.courier_partner || 'BlueDart Luxury Express'}</span>
+                  <span className="text-[#C5A059] font-mono block mt-0.5">Waybill: {order.tracking_number}</span>
                 </div>
               )}
             </div>
@@ -144,13 +144,13 @@ function TrackOrderContent() {
                       <div
                         className={`w-8 h-8 rounded-full flex items-center justify-center mx-auto transition ${
                           isDone
-                            ? 'bg-[#B69A69] text-white shadow-md'
-                            : 'bg-[#EAE3D8] text-[#999]'
+                            ? 'bg-gradient-to-br from-[#C5A059] to-[#D4AF37] text-[#0A0A0A] font-bold shadow-md shadow-[#C5A059]/20'
+                            : 'bg-[#181818] border border-[#2E261B] text-[#6E6759]'
                         }`}
                       >
                         {isDone ? <CheckCircle2 className="w-4 h-4" /> : <Clock className="w-4 h-4" />}
                       </div>
-                      <p className={`text-[11px] font-medium ${isDone ? 'text-[#151515]' : 'text-[#999]'}`}>
+                      <p className={`text-[11px] font-medium ${isDone ? 'text-[#C5A059]' : 'text-[#6E6759]'}`}>
                         {stepName}
                       </p>
                     </div>
@@ -160,43 +160,43 @@ function TrackOrderContent() {
             </div>
 
             {/* Consignment Items */}
-            <div className="border border-[#EAE3D8] rounded-sm divide-y divide-[#EAE3D8]">
+            <div className="border border-[#2E261B] rounded-sm divide-y divide-[#2E261B]">
               {order.items?.map((it) => (
-                <div key={it.id} className="p-4 flex items-center justify-between text-xs">
+                <div key={it.id} className="p-4 flex items-center justify-between text-xs bg-[#141414]">
                   <div className="flex items-center space-x-3">
-                    <img src={it.product_image} alt={it.product_name} className="w-12 h-14 object-cover rounded-sm border border-[#D9CFC0]" />
+                    <img src={it.product_image} alt={it.product_name} className="w-12 h-14 object-cover rounded-sm border border-[#2E261B]" />
                     <div>
-                      <h4 className="font-serif text-sm font-medium text-[#151515]">{it.product_name}</h4>
-                      <p className="text-[#78746D]">Quantity: {it.quantity}</p>
+                      <h4 className="font-serif text-sm font-medium text-[#F5EEDB]">{it.product_name}</h4>
+                      <p className="text-[#9E9788]">Quantity: {it.quantity}</p>
                     </div>
                   </div>
-                  <span className="font-medium text-[#151515]">{formatINR(it.total_price_in_paise)}</span>
+                  <span className="font-medium text-[#F5EEDB]">{formatINR(it.total_price_in_paise)}</span>
                 </div>
               ))}
             </div>
 
             {/* Total and Address Details */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-[#EAE3D8] text-xs">
-              <div className="bg-[#F6F3ED] p-4 rounded-sm border border-[#D9CFC0] space-y-1">
-                <span className="font-medium uppercase tracking-wider text-[#151515] block mb-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-[#2E261B] text-xs">
+              <div className="bg-[#181818] p-4 rounded-sm border border-[#2E261B] space-y-1">
+                <span className="font-medium uppercase tracking-wider text-[#F5EEDB] block mb-1">
                   Delivery Destination
                 </span>
-                <p className="text-[#151515] font-medium">{order.shipping_address.full_name || order.shipping_address.fullName}</p>
-                <p className="text-[#555]">{order.shipping_address.address_line1 || order.shipping_address.addressLine1}, {order.shipping_address.city}</p>
-                <p className="text-[#555]">{order.shipping_address.state} — {order.shipping_address.pincode}</p>
+                <p className="text-[#F5EEDB] font-medium">{order.shipping_address.full_name || order.shipping_address.fullName}</p>
+                <p className="text-[#9E9788]">{order.shipping_address.address_line1 || order.shipping_address.addressLine1}, {order.shipping_address.city}</p>
+                <p className="text-[#9E9788]">{order.shipping_address.state} — {order.shipping_address.pincode}</p>
               </div>
 
-              <div className="bg-[#F6F3ED] p-4 rounded-sm border border-[#D9CFC0] space-y-2">
-                <span className="font-medium uppercase tracking-wider text-[#151515] block mb-1">
+              <div className="bg-[#181818] p-4 rounded-sm border border-[#2E261B] space-y-2">
+                <span className="font-medium uppercase tracking-wider text-[#F5EEDB] block mb-1">
                   Billing Overview
                 </span>
-                <div className="flex justify-between text-[#555]">
+                <div className="flex justify-between text-[#9E9788]">
                   <span>Subtotal:</span>
-                  <span>{formatINR(order.subtotal_in_paise)}</span>
+                  <span className="text-[#F5EEDB]">{formatINR(order.subtotal_in_paise)}</span>
                 </div>
-                <div className="flex justify-between text-base font-serif font-medium text-[#151515] pt-1 border-t border-[#D9CFC0]">
+                <div className="flex justify-between text-base font-serif font-medium text-[#F5EEDB] pt-1 border-t border-[#2E261B]">
                   <span>Total Amount:</span>
-                  <span className="text-[#B69A69]">{formatINR(order.total_in_paise)}</span>
+                  <span className="text-[#C5A059]">{formatINR(order.total_in_paise)}</span>
                 </div>
               </div>
             </div>
@@ -209,7 +209,7 @@ function TrackOrderContent() {
 
 export default function TrackOrderPage() {
   return (
-    <Suspense fallback={<div className="pt-32 text-center text-xs text-[#78746D]">Loading Consignment Tracker...</div>}>
+    <Suspense fallback={<div className="pt-32 text-center text-xs text-[#9E9788] bg-[#0A0A0A] min-h-screen">Loading Consignment Tracker...</div>}>
       <TrackOrderContent />
     </Suspense>
   );

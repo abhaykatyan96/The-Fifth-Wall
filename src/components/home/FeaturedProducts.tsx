@@ -15,20 +15,20 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   return (
-    <section className="py-24 bg-white border-t border-[#EAE3D8]">
+    <section className="py-24 bg-[#0D0D0D] border-t border-[#2E261B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-[#EAE3D8] pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-[#2E261B] pb-8">
           <div>
             <span className="section-kicker">02 / Iconic Luminaires</span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#151515] font-light mt-1">
-              Featured <em>Pieces.</em>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#F5EEDB] font-light mt-1">
+              Featured <em className="text-[#C5A059]">Pieces.</em>
             </h2>
           </div>
 
           <Link
             href="/shop"
-            className="group inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-medium text-[#151515] hover:text-[#B69A69] transition mt-4 md:mt-0"
+            className="group inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-medium text-[#F5EEDB] hover:text-[#C5A059] transition mt-4 md:mt-0"
           >
             <span>Explore All 16 Pieces</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

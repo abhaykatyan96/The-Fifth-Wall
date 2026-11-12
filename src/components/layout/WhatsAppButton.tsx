@@ -8,7 +8,7 @@ export default function WhatsAppButton() {
   const pathname = usePathname();
   if (pathname.startsWith('/admin')) return null;
 
-  const phoneNumber = '919876543210';
+  const phoneNumber = '919198216699';
   const message = encodeURIComponent(
     'Hello THE FIFTH WALL, I would like to inquire about design consultation, statement lighting, and bespoke interior pieces.'
   );

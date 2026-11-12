@@ -53,32 +53,32 @@ export default function DesignConsultationForm() {
   };
 
   return (
-    <section id="consultation" className="py-24 bg-[#F6F3ED] border-t border-[#EAE3D8]">
+    <section id="consultation" className="py-24 bg-[#0A0A0A] border-t border-[#2E261B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto bg-white border border-[#EAE3D8] p-8 sm:p-14 rounded-sm shadow-xl relative overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-[#121212] border border-[#2E261B] p-8 sm:p-14 rounded-sm shadow-2xl relative overflow-hidden">
           {/* Subtle Top Gold Accent Line */}
-          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#B69A69] via-[#D4C39E] to-[#B69A69]" />
+          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#C5A059] via-[#E5C378] to-[#C5A059]" />
 
           <div className="text-center max-w-xl mx-auto mb-12">
             <div className="inline-flex items-center gap-1.5 justify-center">
-              <Sparkles className="w-4 h-4 text-[#B69A69]" />
+              <Sparkles className="w-4 h-4 text-[#C5A059]" />
               <span className="section-kicker mb-0">Bespoke Architectural Advisory</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#151515] font-light mt-2">
-              Let&apos;s Design Your <em>Space Together.</em>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#F5EEDB] font-light mt-2">
+              Let&apos;s Design Your <em className="text-[#C5A059]">Space Together.</em>
             </h2>
-            <p className="text-xs sm:text-sm text-[#78746D] mt-3 font-light leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#9E9788] mt-3 font-light leading-relaxed">
               Whether you are designing a private villa, penthouse suite, or bespoke hospitality space, collaborate with our studio for tailored lighting schemes and custom fabrications.
             </p>
           </div>
 
           {status === 'success' ? (
             <div className="py-12 text-center space-y-4 animate-fadeIn">
-              <div className="w-16 h-16 rounded-full bg-[#ecfdf5] text-[#16a34a] flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 rounded-full bg-[#1A1812] border border-[#C5A059] text-[#C5A059] flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h3 className="font-serif text-2xl text-[#151515]">Enquiry Received with Gratitude</h3>
-              <p className="text-xs text-[#555] max-w-md mx-auto leading-relaxed">{feedback}</p>
+              <h3 className="font-serif text-2xl text-[#F5EEDB]">Enquiry Received with Gratitude</h3>
+              <p className="text-xs text-[#9E9788] max-w-md mx-auto leading-relaxed">{feedback}</p>
               <button
                 type="button"
                 onClick={() => setStatus('idle')}
@@ -91,7 +91,7 @@ export default function DesignConsultationForm() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div>
-                  <label htmlFor="consultation-name" className="block text-[11px] uppercase tracking-wider text-[#151515] font-semibold mb-2">
+                  <label htmlFor="consultation-name" className="block text-[11px] uppercase tracking-wider text-[#F5EEDB] font-semibold mb-2">
                     Full Name *
                   </label>
                   <input
@@ -101,12 +101,12 @@ export default function DesignConsultationForm() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. Radhika Singhania"
-                    className="w-full bg-[#F6F3ED] border border-[#D9CFC0] text-xs px-4 py-3 text-[#151515] focus:outline-none focus:border-[#B69A69] transition rounded-sm"
+                    className="w-full bg-[#181818] border border-[#2E261B] text-xs px-4 py-3 text-[#F5EEDB] placeholder-[#6E6759] focus:outline-none focus:border-[#C5A059] transition rounded-sm"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="consultation-email" className="block text-[11px] uppercase tracking-wider text-[#151515] font-semibold mb-2">
+                  <label htmlFor="consultation-email" className="block text-[11px] uppercase tracking-wider text-[#F5EEDB] font-semibold mb-2">
                     Email Address *
                   </label>
                   <input
@@ -116,12 +116,12 @@ export default function DesignConsultationForm() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="e.g. radhika@example.com"
-                    className="w-full bg-[#F6F3ED] border border-[#D9CFC0] text-xs px-4 py-3 text-[#151515] focus:outline-none focus:border-[#B69A69] transition rounded-sm"
+                    className="w-full bg-[#181818] border border-[#2E261B] text-xs px-4 py-3 text-[#F5EEDB] placeholder-[#6E6759] focus:outline-none focus:border-[#C5A059] transition rounded-sm"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="consultation-phone" className="block text-[11px] uppercase tracking-wider text-[#151515] font-semibold mb-2">
+                  <label htmlFor="consultation-phone" className="block text-[11px] uppercase tracking-wider text-[#F5EEDB] font-semibold mb-2">
                     Phone / WhatsApp *
                   </label>
                   <input
@@ -131,21 +131,21 @@ export default function DesignConsultationForm() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="e.g. +91 98200 12345"
-                    className="w-full bg-[#F6F3ED] border border-[#D9CFC0] text-xs px-4 py-3 text-[#151515] focus:outline-none focus:border-[#B69A69] transition rounded-sm"
+                    className="w-full bg-[#181818] border border-[#2E261B] text-xs px-4 py-3 text-[#F5EEDB] placeholder-[#6E6759] focus:outline-none focus:border-[#C5A059] transition rounded-sm"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div>
-                  <label htmlFor="consultation-room-type" className="block text-[11px] uppercase tracking-wider text-[#151515] font-semibold mb-2">
+                  <label htmlFor="consultation-room-type" className="block text-[11px] uppercase tracking-wider text-[#F5EEDB] font-semibold mb-2">
                     Room Type *
                   </label>
                   <select
                     id="consultation-room-type"
                     value={formData.roomType}
                     onChange={(e) => setFormData({ ...formData, roomType: e.target.value })}
-                    className="w-full bg-[#F6F3ED] border border-[#D9CFC0] text-xs px-4 py-3 text-[#151515] focus:outline-none focus:border-[#B69A69] transition rounded-sm"
+                    className="w-full bg-[#181818] border border-[#2E261B] text-xs px-4 py-3 text-[#F5EEDB] focus:outline-none focus:border-[#C5A059] transition rounded-sm"
                   >
                     <option value="Living & Dining Duplex">Living & Dining Duplex</option>
                     <option value="Master Bedroom Suite">Master Bedroom Suite</option>
@@ -157,14 +157,14 @@ export default function DesignConsultationForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="consultation-project-type" className="block text-[11px] uppercase tracking-wider text-[#151515] font-semibold mb-2">
+                  <label htmlFor="consultation-project-type" className="block text-[11px] uppercase tracking-wider text-[#F5EEDB] font-semibold mb-2">
                     Project Type *
                   </label>
                   <select
                     id="consultation-project-type"
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full bg-[#F6F3ED] border border-[#D9CFC0] text-xs px-4 py-3 text-[#151515] focus:outline-none focus:border-[#B69A69] transition rounded-sm"
+                    className="w-full bg-[#181818] border border-[#2E261B] text-xs px-4 py-3 text-[#F5EEDB] focus:outline-none focus:border-[#C5A059] transition rounded-sm"
                   >
                     <option value="Complete Residence Illumination">Complete Residence Illumination</option>
                     <option value="Statement Lighting Upgrade">Statement Lighting Upgrade</option>
@@ -174,14 +174,14 @@ export default function DesignConsultationForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="consultation-budget" className="block text-[11px] uppercase tracking-wider text-[#151515] font-semibold mb-2">
+                  <label htmlFor="consultation-budget" className="block text-[11px] uppercase tracking-wider text-[#F5EEDB] font-semibold mb-2">
                     Estimated Budget *
                   </label>
                   <select
                     id="consultation-budget"
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full bg-[#F6F3ED] border border-[#D9CFC0] text-xs px-4 py-3 text-[#151515] focus:outline-none focus:border-[#B69A69] transition rounded-sm"
+                    className="w-full bg-[#181818] border border-[#2E261B] text-xs px-4 py-3 text-[#F5EEDB] focus:outline-none focus:border-[#C5A059] transition rounded-sm"
                   >
                     <option value="₹1,00,000 - ₹3,00,000">₹1,00,000 - ₹3,00,000</option>
                     <option value="₹3,00,000 - ₹5,00,000">₹3,00,000 - ₹5,00,000</option>
@@ -192,7 +192,7 @@ export default function DesignConsultationForm() {
               </div>
 
               <div>
-                <label htmlFor="consultation-message" className="block text-[11px] uppercase tracking-wider text-[#151515] font-semibold mb-2">
+                <label htmlFor="consultation-message" className="block text-[11px] uppercase tracking-wider text-[#F5EEDB] font-semibold mb-2">
                   Tell Us About Your Space & Vision *
                 </label>
                 <textarea
@@ -202,12 +202,12 @@ export default function DesignConsultationForm() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Share details such as ceiling height, finishes, architectural style, or specific questions..."
-                  className="w-full bg-[#F6F3ED] border border-[#D9CFC0] text-xs px-4 py-3 text-[#151515] focus:outline-none focus:border-[#B69A69] transition rounded-sm resize-none"
+                  className="w-full bg-[#181818] border border-[#2E261B] text-xs px-4 py-3 text-[#F5EEDB] placeholder-[#6E6759] focus:outline-none focus:border-[#C5A059] transition rounded-sm resize-none"
                 />
               </div>
 
               {feedback && status === 'error' && (
-                <p className="text-xs text-[#b91c1c] text-center">{feedback}</p>
+                <p className="text-xs text-[#f87171] text-center">{feedback}</p>
               )}
 
               <div className="text-center pt-2">

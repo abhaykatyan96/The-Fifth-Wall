@@ -2,31 +2,39 @@
 
 @layer base {
   :root {
-    --brand-ivory: #F6F3ED;
-    --brand-cream: #EAE3D8;
-    --brand-gold: #B69A69;
-    --brand-gold-light: #D4C39E;
-    --brand-gold-dark: #8E7444;
-    --brand-charcoal: #242321;
-    --brand-black: #151515;
-    --brand-beige: #D9CFC0;
-    --brand-white: #FFFFFF;
+    --brand-black: #0A0A0A;
+    --brand-black-card: #141414;
+    --brand-black-surface: #1A1A1A;
+    --brand-black-elevated: #222222;
+    --brand-gold: #C5A059;
+    --brand-gold-light: #E5C378;
+    --brand-gold-dark: #9A7B38;
+    --brand-gold-muted: #8C7B5D;
+    --brand-gold-border: #2E261B;
+    --brand-gold-border-bright: rgba(197, 160, 89, 0.35);
+    --brand-ivory: #0A0A0A;
+    --brand-cream: #141414;
+    --brand-charcoal: #F5EEDB;
+    --brand-beige: #2E261B;
+    --brand-white: #141414;
+    --brand-text-primary: #F5EEDB;
+    --brand-text-secondary: #A89E8C;
   }
 
   * {
-    border-color: #EAE3D8;
+    border-color: #2E261B;
     box-sizing: border-box;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: var(--brand-ivory);
-    color: var(--brand-charcoal);
+    background-color: #0A0A0A;
+    color: #F5EEDB;
   }
 
   body {
-    background-color: var(--brand-ivory);
-    color: var(--brand-charcoal);
+    background-color: #0A0A0A;
+    color: #F5EEDB;
     font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -39,30 +47,31 @@
   }
 }
 
-/* Custom Luxury Aesthetics & Micro-interactions */
+/* Custom Golden & Black Luxury Aesthetics & Micro-interactions */
 .gold-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #B69A69;
-  color: #151515;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, #C5A059 0%, #D4AF37 50%, #B8934C 100%);
+  color: #0A0A0A;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   font-size: 0.8125rem;
   padding: 0.875rem 2rem;
-  border: 1px solid #B69A69;
+  border: 1px solid #D4AF37;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
 }
 
 .gold-button:hover {
-  background-color: #8E7444;
-  border-color: #8E7444;
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #D4AF37 0%, #E5C378 100%);
+  border-color: #E5C378;
+  color: #050505;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(182, 154, 105, 0.3);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
 }
 
 .gold-button-outline {
@@ -71,46 +80,49 @@
   justify-content: center;
   gap: 0.5rem;
   background-color: transparent;
-  color: #151515;
+  color: #E5C378;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   font-size: 0.8125rem;
   padding: 0.875rem 2rem;
-  border: 1px solid #242321;
+  border: 1px solid #C5A059;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
 .gold-button-outline:hover {
-  background-color: #242321;
-  color: #F6F3ED;
+  background: #C5A059;
+  color: #0A0A0A;
+  font-weight: 600;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.35);
 }
 
 .section-kicker {
   font-size: 0.75rem;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #B69A69;
+  color: #C5A059;
   font-weight: 600;
   margin-bottom: 0.75rem;
+  display: inline-block;
 }
 
 /* Glassmorphism Navigation */
 .glass-nav-scrolled {
-  background-color: rgba(246, 243, 237, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(234, 227, 216, 0.8);
-  box-shadow: 0 4px 20px -2px rgba(21, 21, 21, 0.04);
+  background-color: rgba(10, 10, 10, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.22);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.8);
 }
 
 .glass-nav-transparent {
-  background-color: rgba(21, 21, 21, 0.4);
+  background-color: rgba(10, 10, 10, 0.45);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.15);
 }
 
 /* Custom Scrollbar */
@@ -120,14 +132,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #F6F3ED;
+  background: #0A0A0A;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D9CFC0;
+  background: #2E261B;
   border-radius: 3px;
+  border: 1px solid rgba(197, 160, 89, 0.15);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B69A69;
+  background: #C5A059;
 }

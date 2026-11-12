@@ -40,20 +40,20 @@ export default function Navbar() {
   }
 
   const navClass = isHome && !isScrolled
-    ? 'glass-nav-transparent text-white'
-    : 'glass-nav-scrolled text-[#151515]';
+    ? 'glass-nav-transparent text-[#F5EEDB]'
+    : 'glass-nav-scrolled text-[#F5EEDB]';
 
-  const logoColor = isHome && !isScrolled ? 'text-white' : 'text-[#151515]';
-  const subtextColor = isHome && !isScrolled ? 'text-[#D4C39E]' : 'text-[#B69A69]';
+  const logoColor = 'text-[#F5EEDB] group-hover:text-[#C5A059]';
+  const subtextColor = 'text-[#C5A059]';
 
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${navClass}`}>
         {/* Top Announcement Bar */}
-        <div className="bg-[#151515] text-[#D9CFC0] text-[11px] tracking-[0.2em] uppercase py-2 text-center border-b border-[#242321] px-4 font-medium flex items-center justify-center gap-4">
+        <div className="bg-[#060606] text-[#C5A059] text-[11px] tracking-[0.2em] uppercase py-2 text-center border-b border-[#2E261B] px-4 font-medium flex items-center justify-center gap-4">
           <span>Complimentary White-Glove Shipping Across India On Orders Above ₹4,999</span>
-          <span className="hidden md:inline text-[#B69A69]">✦</span>
-          <span className="hidden md:inline">Lucknow Flagship Showroom</span>
+          <span className="hidden md:inline text-[#E5C378]">✦</span>
+          <span className="hidden md:inline text-[#E5C378]">Lucknow Flagship Showroom</span>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,14 +71,13 @@ export default function Navbar() {
             </div>
 
             {/* Brand Logo */}
-            <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="group flex flex-col items-center sm:items-start text-center sm:text-left">
-                <span className={`font-serif text-2xl sm:text-3xl tracking-[0.22em] font-normal uppercase transition-colors duration-200 ${logoColor}`}>
-                  THE FIFTH WALL
-                </span>
-                <span className={`text-[9px] tracking-[0.35em] uppercase font-light mt-0.5 ${subtextColor}`}>
-                  Lighting · Interiors · Beyond
-                </span>
+            <div className="flex-shrink-0 flex items-center py-2">
+              <Link href="/" className="group flex items-center">
+                <img
+                  src="/images/logo.png"
+                  alt="THE FIFTH WALL — Lighting Interiors Beyond"
+                  className="h-9 sm:h-11 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                />
               </Link>
             </div>
 
@@ -86,13 +85,13 @@ export default function Navbar() {
             <nav className="hidden lg:flex items-center space-x-8 text-[12px] tracking-[0.15em] uppercase font-medium">
               <Link
                 href="/"
-                className="hover:text-[#B69A69] transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#B69A69] hover:after:w-full after:transition-all"
+                className="hover:text-[#C5A059] transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#C5A059] hover:after:w-full after:transition-all"
               >
                 Home
               </Link>
               <Link
                 href="/shop"
-                className="hover:text-[#B69A69] transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#B69A69] hover:after:w-full after:transition-all"
+                className="hover:text-[#C5A059] transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#C5A059] hover:after:w-full after:transition-all"
               >
                 Shop All
               </Link>
@@ -105,7 +104,7 @@ export default function Navbar() {
               >
                 <button
                   type="button"
-                  className="flex items-center gap-1 hover:text-[#B69A69] transition py-1 uppercase"
+                  className="flex items-center gap-1 hover:text-[#C5A059] transition py-1 uppercase"
                 >
                   <span>Lighting</span>
                   <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
@@ -113,52 +112,52 @@ export default function Navbar() {
 
                 {/* Dropdown Menu */}
                 {lightingMenuOpen && (
-                  <div className="absolute top-full -left-12 w-64 bg-[#F6F3ED] text-[#151515] shadow-2xl border border-[#EAE3D8] py-4 px-2 rounded-sm transition-all animate-fadeIn">
+                  <div className="absolute top-full -left-12 w-64 bg-[#121212] text-[#F5EEDB] shadow-2xl border border-[#2E261B] py-4 px-2 rounded-sm transition-all animate-fadeIn">
                     <Link
                       href="/collections/chandeliers"
-                      className="block px-4 py-2 hover:bg-[#EAE3D8] hover:text-[#B69A69] text-xs transition"
+                      className="block px-4 py-2 hover:bg-[#1C1812] hover:text-[#C5A059] text-xs transition"
                     >
                       Chandeliers
                     </Link>
                     <Link
                       href="/collections/ceiling-lights"
-                      className="block px-4 py-2 hover:bg-[#EAE3D8] hover:text-[#B69A69] text-xs transition"
+                      className="block px-4 py-2 hover:bg-[#1C1812] hover:text-[#C5A059] text-xs transition"
                     >
                       Ceiling Lights
                     </Link>
                     <Link
                       href="/collections/wall-lights"
-                      className="block px-4 py-2 hover:bg-[#EAE3D8] hover:text-[#B69A69] text-xs transition"
+                      className="block px-4 py-2 hover:bg-[#1C1812] hover:text-[#C5A059] text-xs transition"
                     >
                       Wall Lights
                     </Link>
                     <Link
                       href="/collections/pendant-lights"
-                      className="block px-4 py-2 hover:bg-[#EAE3D8] hover:text-[#B69A69] text-xs transition"
+                      className="block px-4 py-2 hover:bg-[#1C1812] hover:text-[#C5A059] text-xs transition"
                     >
                       Pendant Lights
                     </Link>
                     <Link
                       href="/collections/floor-lamps"
-                      className="block px-4 py-2 hover:bg-[#EAE3D8] hover:text-[#B69A69] text-xs transition"
+                      className="block px-4 py-2 hover:bg-[#1C1812] hover:text-[#C5A059] text-xs transition"
                     >
                       Floor Lamps
                     </Link>
                     <Link
                       href="/collections/table-lamps"
-                      className="block px-4 py-2 hover:bg-[#EAE3D8] hover:text-[#B69A69] text-xs transition"
+                      className="block px-4 py-2 hover:bg-[#1C1812] hover:text-[#C5A059] text-xs transition"
                     >
                       Table Lamps
                     </Link>
                     <Link
                       href="/collections/outdoor-lighting"
-                      className="block px-4 py-2 hover:bg-[#EAE3D8] hover:text-[#B69A69] text-xs transition"
+                      className="block px-4 py-2 hover:bg-[#1C1812] hover:text-[#C5A059] text-xs transition"
                     >
                       Outdoor Lighting
                     </Link>
                     <Link
                       href="/collections/ceiling-fans"
-                      className="block px-4 py-2 hover:bg-[#EAE3D8] hover:text-[#B69A69] text-xs transition"
+                      className="block px-4 py-2 hover:bg-[#1C1812] hover:text-[#C5A059] text-xs transition"
                     >
                       Ceiling Fans
                     </Link>
@@ -168,25 +167,25 @@ export default function Navbar() {
 
               <Link
                 href="/collections/furniture"
-                className="hover:text-[#B69A69] transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#B69A69] hover:after:w-full after:transition-all"
+                className="hover:text-[#C5A059] transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#C5A059] hover:after:w-full after:transition-all"
               >
                 Furniture
               </Link>
               <Link
                 href="/collections/interior-decor"
-                className="hover:text-[#B69A69] transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#B69A69] hover:after:w-full after:transition-all"
+                className="hover:text-[#C5A059] transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#C5A059] hover:after:w-full after:transition-all"
               >
                 Interior Décor
               </Link>
               <Link
                 href="/about"
-                className="hover:text-[#B69A69] transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#B69A69] hover:after:w-full after:transition-all"
+                className="hover:text-[#C5A059] transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#C5A059] hover:after:w-full after:transition-all"
               >
                 About Us
               </Link>
               <Link
                 href="/contact"
-                className="hover:text-[#B69A69] transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#B69A69] hover:after:w-full after:transition-all"
+                className="hover:text-[#C5A059] transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#C5A059] hover:after:w-full after:transition-all"
               >
                 Contact
               </Link>
@@ -200,7 +199,7 @@ export default function Navbar() {
                 onClick={() => {
                   window.dispatchEvent(new CustomEvent('tfw:open-search'));
                 }}
-                className="hover:text-[#B69A69] transition p-1"
+                className="hover:text-[#C5A059] transition p-1"
                 aria-label="Open search"
               >
                 <Search className="w-5 h-5 stroke-[1.5]" />
@@ -209,7 +208,7 @@ export default function Navbar() {
               {/* Account Dropdown */}
               <Link
                 href={user ? '/account/profile' : '/login'}
-                className="hover:text-[#B69A69] transition p-1 relative flex items-center"
+                className="hover:text-[#C5A059] transition p-1 relative flex items-center"
                 aria-label="My Account"
                 title={user ? `Signed in as ${user.email}` : 'Sign In'}
               >
@@ -222,12 +221,12 @@ export default function Navbar() {
               {/* Wishlist Link */}
               <Link
                 href="/wishlist"
-                className="hover:text-[#B69A69] transition p-1 relative"
+                className="hover:text-[#C5A059] transition p-1 relative"
                 aria-label="Wishlist"
               >
                 <Heart className="w-5 h-5 stroke-[1.5]" />
                 {wishlistCount > 0 && (
-                  <span className="absolute -top-1.5 -right-2 bg-[#B69A69] text-[#151515] text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1.5 -right-2 bg-[#C5A059] text-[#0A0A0A] text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                     {wishlistCount}
                   </span>
                 )}
@@ -237,12 +236,12 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setIsCartDrawerOpen(true)}
-                className="hover:text-[#B69A69] transition p-1 relative"
+                className="hover:text-[#C5A059] transition p-1 relative"
                 aria-label="Shopping bag"
               >
                 <ShoppingBag className="w-5 h-5 stroke-[1.5]" />
                 {itemCount > 0 && (
-                  <span className="absolute -top-1.5 -right-2 bg-[#151515] text-[#F6F3ED] text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-[#B69A69]">
+                  <span className="absolute -top-1.5 -right-2 bg-[#C5A059] text-[#0A0A0A] text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-[#E5C378]">
                     {itemCount}
                   </span>
                 )}
@@ -253,41 +252,41 @@ export default function Navbar() {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#F6F3ED] text-[#151515] border-t border-[#EAE3D8] px-6 py-8 shadow-2xl animate-fadeIn max-h-[85vh] overflow-y-auto">
+          <div className="lg:hidden bg-[#101010] text-[#F5EEDB] border-t border-[#2E261B] px-6 py-8 shadow-2xl animate-fadeIn max-h-[85vh] overflow-y-auto">
             <nav className="flex flex-col space-y-4 text-sm tracking-[0.15em] uppercase font-medium">
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-[#EAE3D8] hover:text-[#B69A69]"
+                className="py-2 border-b border-[#2E261B] hover:text-[#C5A059]"
               >
                 Home
               </Link>
               <Link
                 href="/shop"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-[#EAE3D8] hover:text-[#B69A69]"
+                className="py-2 border-b border-[#2E261B] hover:text-[#C5A059]"
               >
                 Shop All Collection
               </Link>
-              <div className="py-2 border-b border-[#EAE3D8]">
-                <div className="font-semibold text-xs text-[#B69A69] mb-2">Lighting Collections</div>
+              <div className="py-2 border-b border-[#2E261B]">
+                <div className="font-semibold text-xs text-[#C5A059] mb-2">Lighting Collections</div>
                 <div className="pl-4 space-y-2 text-xs normal-case tracking-normal">
-                  <Link href="/collections/chandeliers" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#B69A69]">
+                  <Link href="/collections/chandeliers" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#C5A059]">
                     Chandeliers
                   </Link>
-                  <Link href="/collections/ceiling-lights" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#B69A69]">
+                  <Link href="/collections/ceiling-lights" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#C5A059]">
                     Ceiling Lights
                   </Link>
-                  <Link href="/collections/wall-lights" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#B69A69]">
+                  <Link href="/collections/wall-lights" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#C5A059]">
                     Wall Lights
                   </Link>
-                  <Link href="/collections/pendant-lights" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#B69A69]">
+                  <Link href="/collections/pendant-lights" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#C5A059]">
                     Pendant Lights
                   </Link>
-                  <Link href="/collections/floor-lamps" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#B69A69]">
+                  <Link href="/collections/floor-lamps" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#C5A059]">
                     Floor Lamps
                   </Link>
-                  <Link href="/collections/ceiling-fans" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#B69A69]">
+                  <Link href="/collections/ceiling-fans" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#C5A059]">
                     Ceiling Fans
                   </Link>
                 </div>
@@ -295,42 +294,42 @@ export default function Navbar() {
               <Link
                 href="/collections/furniture"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-[#EAE3D8] hover:text-[#B69A69]"
+                className="py-2 border-b border-[#2E261B] hover:text-[#C5A059]"
               >
                 Furniture
               </Link>
               <Link
                 href="/collections/interior-decor"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-[#EAE3D8] hover:text-[#B69A69]"
+                className="py-2 border-b border-[#2E261B] hover:text-[#C5A059]"
               >
                 Interior Décor
               </Link>
               <Link
                 href="/about"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-[#EAE3D8] hover:text-[#B69A69]"
+                className="py-2 border-b border-[#2E261B] hover:text-[#C5A059]"
               >
                 About Our Story
               </Link>
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-[#EAE3D8] hover:text-[#B69A69]"
+                className="py-2 border-b border-[#2E261B] hover:text-[#C5A059]"
               >
                 Contact & Showroom
               </Link>
               <Link
                 href="/track-order"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-[#EAE3D8] hover:text-[#B69A69]"
+                className="py-2 border-b border-[#2E261B] hover:text-[#C5A059]"
               >
                 Track My Order
               </Link>
               <Link
                 href="/admin/dashboard"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 text-[#B69A69] font-bold text-xs"
+                className="py-2 text-[#C5A059] font-bold text-xs"
               >
                 Admin Portal
               </Link>

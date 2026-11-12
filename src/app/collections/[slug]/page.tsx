@@ -27,9 +27,9 @@ export default async function CategoryPage({
   const products = await getProducts({ categorySlug: slug });
 
   return (
-    <div className="pt-28 pb-24 bg-[#F6F3ED] min-h-screen">
+    <div className="pt-28 pb-24 bg-[#0A0A0A] min-h-screen text-[#F5EEDB]">
       {/* Editorial Header Banner */}
-      <div className="relative bg-[#151515] text-white py-20 px-4 sm:px-6 lg:px-8 mb-12 overflow-hidden">
+      <div className="relative bg-[#060606] text-white py-20 px-4 sm:px-6 lg:px-8 mb-12 overflow-hidden border-b border-[#2E261B]">
         {category.image_url && (
           <div className="absolute inset-0 opacity-30">
             <img
@@ -40,42 +40,42 @@ export default async function CategoryPage({
           </div>
         )}
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-4">
-          <nav className="text-[11px] uppercase tracking-widest text-[#B69A69] space-x-2">
+          <nav className="text-[11px] uppercase tracking-widest text-[#C5A059] space-x-2 font-medium">
             <Link href="/" className="hover:underline">Home</Link>
             <span>/</span>
             <Link href="/shop" className="hover:underline">Collections</Link>
             <span>/</span>
-            <span className="text-[#D9CFC0]">{category.name}</span>
+            <span className="text-[#E5C378]">{category.name}</span>
           </nav>
 
-          <h1 className="font-serif text-4xl sm:text-6xl font-light">
+          <h1 className="font-serif text-4xl sm:text-6xl font-light text-[#F5EEDB]">
             {category.name}
           </h1>
 
-          <p className="text-xs sm:text-sm text-[#D9CFC0] max-w-xl mx-auto font-light leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#9E9788] max-w-xl mx-auto font-light leading-relaxed">
             {category.description}
           </p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between pb-6 border-b border-[#EAE3D8] mb-8">
-          <p className="text-xs text-[#78746D]">
-            Curated pieces: <strong className="text-[#151515]">{products.length}</strong>
+        <div className="flex items-center justify-between pb-6 border-b border-[#2E261B] mb-8">
+          <p className="text-xs text-[#9E9788]">
+            Curated pieces: <strong className="text-[#F5EEDB]">{products.length}</strong>
           </p>
 
           <Link
             href="/shop"
-            className="text-xs uppercase tracking-[0.15em] text-[#B69A69] hover:underline font-medium"
+            className="text-xs uppercase tracking-[0.15em] text-[#C5A059] hover:underline font-medium"
           >
             ← View All Collections
           </Link>
         </div>
 
         {products.length === 0 ? (
-          <div className="py-24 text-center bg-white border border-[#EAE3D8] rounded-sm p-12 space-y-4">
-            <h3 className="font-serif text-2xl text-[#151515]">Collection in Production</h3>
-            <p className="text-xs text-[#78746D] max-w-sm mx-auto">
+          <div className="py-24 text-center bg-[#141414] border border-[#2E261B] rounded-sm p-12 space-y-4">
+            <h3 className="font-serif text-2xl text-[#F5EEDB]">Collection in Production</h3>
+            <p className="text-xs text-[#9E9788] max-w-sm mx-auto">
               Our artisanal workshops are completing handcrafted pieces for this category. Contact us for custom commissions.
             </p>
             <Link href="/contact" className="gold-button inline-flex py-3 px-6 text-xs">

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ShieldAlert, KeyRound, ArrowRight, Loader2, AlertCircle } from 'lucide-react';
 
@@ -40,22 +41,23 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#151515] text-[#F6F3ED] flex items-center justify-center p-4">
-      <div className="max-w-md w-full bg-[#242321] border border-[#383633] rounded-sm p-8 sm:p-10 shadow-2xl space-y-6">
-        <div className="text-center space-y-2">
-          <div className="w-12 h-12 rounded-full bg-[#151515] border border-[#B69A69] text-[#B69A69] flex items-center justify-center mx-auto">
-            <ShieldAlert className="w-6 h-6" />
-          </div>
-          <h1 className="font-serif text-2xl text-white uppercase tracking-widest mt-2">
-            THE FIFTH WALL
-          </h1>
-          <p className="text-[11px] text-[#B69A69] tracking-widest uppercase font-medium">
+    <div className="min-h-screen bg-[#0A0A0A] text-[#F5EEDB] flex items-center justify-center p-4">
+      <div className="max-w-md w-full bg-[#141414] border border-[#2E261B] rounded-sm p-8 sm:p-10 shadow-2xl space-y-6">
+        <div className="text-center space-y-3">
+          <Link href="/" className="inline-block">
+            <img
+              src="/images/logo.png"
+              alt="THE FIFTH WALL"
+              className="h-11 w-auto object-contain mx-auto"
+            />
+          </Link>
+          <p className="text-[11px] text-[#C5A059] tracking-widest uppercase font-medium">
             Restricted Admin Console
           </p>
         </div>
 
         {error && (
-          <div className="p-3 bg-[#450a0a] border border-[#991b1b] text-[#fca5a5] text-xs rounded-sm flex items-center gap-2">
+          <div className="p-3 bg-[#2A1215] border border-[#7F1D1D] text-[#F87171] text-xs rounded-sm flex items-center gap-2">
             <AlertCircle className="w-4 h-4 flex-shrink-0" />
             <span>{error}</span>
           </div>
@@ -65,7 +67,7 @@ export default function AdminLoginPage() {
           {!useSecretMode ? (
             <>
               <div>
-                <label className="block text-[10px] uppercase tracking-wider text-[#D9CFC0] font-semibold mb-1">
+                <label className="block text-[10px] uppercase tracking-wider text-[#F5EEDB] font-semibold mb-1">
                   Administrator Email
                 </label>
                 <input
@@ -73,12 +75,12 @@ export default function AdminLoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-[#151515] border border-[#383633] text-xs px-3.5 py-3 text-white focus:outline-none focus:border-[#B69A69] rounded-sm"
+                  className="w-full bg-[#181818] border border-[#2E261B] text-xs px-3.5 py-3 text-[#F5EEDB] placeholder-[#6E6759] focus:outline-none focus:border-[#C5A059] rounded-sm"
                 />
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase tracking-wider text-[#D9CFC0] font-semibold mb-1">
+                <label className="block text-[10px] uppercase tracking-wider text-[#F5EEDB] font-semibold mb-1">
                   Security Password
                 </label>
                 <input
@@ -87,13 +89,13 @@ export default function AdminLoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="admin123 or bootstrap pass"
-                  className="w-full bg-[#151515] border border-[#383633] text-xs px-3.5 py-3 text-white focus:outline-none focus:border-[#B69A69] rounded-sm"
+                  className="w-full bg-[#181818] border border-[#2E261B] text-xs px-3.5 py-3 text-[#F5EEDB] placeholder-[#6E6759] focus:outline-none focus:border-[#C5A059] rounded-sm"
                 />
               </div>
             </>
           ) : (
             <div>
-              <label className="block text-[10px] uppercase tracking-wider text-[#D9CFC0] font-semibold mb-1">
+              <label className="block text-[10px] uppercase tracking-wider text-[#F5EEDB] font-semibold mb-1">
                 Admin Bootstrap Secret Key
               </label>
               <input
@@ -102,7 +104,7 @@ export default function AdminLoginPage() {
                 value={secretKey}
                 onChange={(e) => setSecretKey(e.target.value)}
                 placeholder="fifthwall_admin_pass_2026"
-                className="w-full bg-[#151515] border border-[#383633] text-xs px-3.5 py-3 text-white focus:outline-none focus:border-[#B69A69] rounded-sm font-mono"
+                className="w-full bg-[#181818] border border-[#2E261B] text-xs px-3.5 py-3 text-[#F5EEDB] placeholder-[#6E6759] focus:outline-none focus:border-[#C5A059] rounded-sm font-mono"
               />
             </div>
           )}
@@ -114,7 +116,7 @@ export default function AdminLoginPage() {
                 setUseSecretMode(!useSecretMode);
                 setError('');
               }}
-              className="text-[#B69A69] hover:underline flex items-center gap-1"
+              className="text-[#C5A059] hover:underline flex items-center gap-1"
             >
               <KeyRound className="w-3 h-3" />
               <span>{useSecretMode ? 'Use Email / Password' : 'Use Bootstrap Key'}</span>
@@ -137,7 +139,7 @@ export default function AdminLoginPage() {
           </button>
         </form>
 
-        <div className="pt-4 border-t border-[#383633] text-center text-[10px] text-[#78746D]">
+        <div className="pt-4 border-t border-[#2E261B] text-center text-[10px] text-[#9E9788]">
           Protected by server-side role verification & RLS policies. Unauthorized access logged.
         </div>
       </div>

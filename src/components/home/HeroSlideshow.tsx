@@ -26,7 +26,7 @@ export default function HeroSlideshow({ slides }: HeroSlideshowProps) {
   const slide = slides[current];
 
   return (
-    <section className="relative h-screen min-h-[700px] w-full overflow-hidden bg-[#151515] flex items-center">
+    <section className="relative h-screen min-h-[700px] w-full overflow-hidden bg-[#0A0A0A] flex items-center">
       {/* Background Slides */}
       {slides.map((s, idx) => (
         <div
@@ -42,7 +42,7 @@ export default function HeroSlideshow({ slides }: HeroSlideshowProps) {
           />
           {/* Subtle cinematic gradient overlays */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#151515] via-transparent to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-black/40" />
         </div>
       ))}
 
@@ -50,21 +50,21 @@ export default function HeroSlideshow({ slides }: HeroSlideshowProps) {
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
         <div className="max-w-2xl text-left space-y-6 animate-fadeIn">
           <div className="inline-flex items-center gap-2">
-            <span className="w-8 h-[1px] bg-[#B69A69]" />
-            <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-[#D4C39E] font-medium">
+            <span className="w-8 h-[1px] bg-[#C5A059]" />
+            <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-[#E5C378] font-medium">
               {slide.eyebrow}
             </p>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-white leading-[1.08] tracking-tight">
+          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-[#F5EEDB] leading-[1.08] tracking-tight">
             {slide.title}
           </h1>
 
-          <p className="font-serif text-xl sm:text-2xl text-[#EAE3D8] italic font-light">
+          <p className="font-serif text-xl sm:text-2xl text-[#E5C378] italic font-light">
             {slide.subtitle}
           </p>
 
-          <p className="text-xs sm:text-sm leading-relaxed text-[#D9CFC0] max-w-xl font-light">
+          <p className="text-xs sm:text-sm leading-relaxed text-[#9E9788] max-w-xl font-light">
             {slide.description}
           </p>
 
@@ -79,7 +79,7 @@ export default function HeroSlideshow({ slides }: HeroSlideshowProps) {
 
             <Link
               href={slide.secondary_link}
-              className="inline-flex items-center justify-center gap-2 py-4 px-8 text-xs tracking-[0.2em] uppercase font-medium text-white border border-white/30 hover:border-white hover:bg-white/10 transition backdrop-blur-sm"
+              className="inline-flex items-center justify-center gap-2 py-4 px-8 text-xs tracking-[0.2em] uppercase font-medium text-[#E5C378] border border-[#C5A059]/50 hover:border-[#C5A059] hover:bg-[#C5A059] hover:text-[#0A0A0A] transition backdrop-blur-sm"
             >
               <span>{slide.secondary_text}</span>
             </Link>
@@ -92,20 +92,20 @@ export default function HeroSlideshow({ slides }: HeroSlideshowProps) {
         <button
           type="button"
           onClick={() => setCurrent((prev) => (prev - 1 + slides.length) % slides.length)}
-          className="w-12 h-12 rounded-full border border-white/20 bg-black/30 hover:bg-[#B69A69] hover:text-[#151515] text-white flex items-center justify-center transition backdrop-blur-sm"
+          className="w-12 h-12 rounded-full border border-[#2E261B] bg-black/50 hover:bg-[#C5A059] hover:text-[#0A0A0A] text-[#C5A059] flex items-center justify-center transition backdrop-blur-sm"
           aria-label="Previous slide"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
 
-        <span className="text-xs font-mono text-[#D4C39E] px-2">
+        <span className="text-xs font-mono text-[#E5C378] px-2">
           0{current + 1} / 0{slides.length}
         </span>
 
         <button
           type="button"
           onClick={() => setCurrent((prev) => (prev + 1) % slides.length)}
-          className="w-12 h-12 rounded-full border border-white/20 bg-black/30 hover:bg-[#B69A69] hover:text-[#151515] text-white flex items-center justify-center transition backdrop-blur-sm"
+          className="w-12 h-12 rounded-full border border-[#2E261B] bg-black/50 hover:bg-[#C5A059] hover:text-[#0A0A0A] text-[#C5A059] flex items-center justify-center transition backdrop-blur-sm"
           aria-label="Next slide"
         >
           <ChevronRight className="w-5 h-5" />
@@ -121,7 +121,7 @@ export default function HeroSlideshow({ slides }: HeroSlideshowProps) {
               type="button"
               onClick={() => setCurrent(i)}
               className={`h-1.5 transition-all duration-300 rounded-full ${
-                i === current ? 'w-8 bg-[#B69A69]' : 'w-2 bg-white/40 hover:bg-white/70'
+                i === current ? 'w-8 bg-[#C5A059]' : 'w-2 bg-[#2E261B] hover:bg-[#C5A059]/60'
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />
@@ -130,7 +130,7 @@ export default function HeroSlideshow({ slides }: HeroSlideshowProps) {
 
         <a
           href="#trust"
-          className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-[#D9CFC0]/70 hover:text-white transition mt-2"
+          className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-[#C5A059]/80 hover:text-[#F5EEDB] transition mt-2"
         >
           <span>Scroll to explore</span>
           <ChevronDown className="w-3.5 h-3.5 animate-bounce" />

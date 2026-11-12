@@ -55,9 +55,9 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
   };
 
   return (
-    <article className="group relative flex flex-col bg-white border border-[#EAE3D8] hover:border-[#B69A69]/60 transition-all duration-300 rounded-sm overflow-hidden hover:shadow-xl">
+    <article className="group relative flex flex-col bg-[#141414] border border-[#2E261B] hover:border-[#C5A059] transition-all duration-300 rounded-sm overflow-hidden hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
       {/* Image Container */}
-      <div className="relative aspect-[4/5] bg-[#EAE3D8] overflow-hidden">
+      <div className="relative aspect-[4/5] bg-[#1A1A1A] overflow-hidden">
         <Link href={`/products/${product.slug}`} className="block w-full h-full">
           <img
             src={product.primary_image_url}
@@ -70,17 +70,17 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
         {/* Top Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10 pointer-events-none">
           {discountPercent && (
-            <span className="bg-[#151515] text-[#F6F3ED] text-[10px] uppercase font-semibold px-2 py-0.5 tracking-wider border border-[#B69A69]/40">
+            <span className="bg-[#0A0A0A] text-[#E5C378] text-[10px] uppercase font-semibold px-2 py-0.5 tracking-wider border border-[#C5A059]/50">
               {discountPercent}% Off
             </span>
           )}
           {product.is_bestseller && (
-            <span className="bg-[#B69A69] text-[#151515] text-[10px] uppercase font-semibold px-2 py-0.5 tracking-wider">
+            <span className="bg-[#C5A059] text-[#0A0A0A] text-[10px] uppercase font-bold px-2 py-0.5 tracking-wider">
               Bestseller
             </span>
           )}
           {product.is_new_arrival && (
-            <span className="bg-[#242321] text-[#D4C39E] text-[10px] uppercase font-semibold px-2 py-0.5 tracking-wider">
+            <span className="bg-[#1C1812] text-[#E5C378] text-[10px] uppercase font-semibold px-2 py-0.5 tracking-wider border border-[#C5A059]/40">
               New
             </span>
           )}
@@ -93,20 +93,20 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
           aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
           className={`absolute top-3 right-3 p-2.5 rounded-full backdrop-blur-md transition-all duration-200 z-10 ${
             isWishlisted
-              ? 'bg-[#B69A69] text-white shadow-md'
-              : 'bg-white/80 text-[#151515] hover:bg-white hover:text-[#B69A69]'
+              ? 'bg-[#C5A059] text-[#0A0A0A] shadow-md'
+              : 'bg-black/60 text-[#F5EEDB] border border-[#2E261B] hover:bg-[#C5A059] hover:text-[#0A0A0A]'
           }`}
         >
           <Heart className={`w-4 h-4 ${isWishlisted ? 'fill-current' : ''}`} />
         </button>
 
         {/* Quick View & Add to Cart Hover Tray */}
-        <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
+        <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
           {onQuickView && (
             <button
               type="button"
               onClick={handleQuickView}
-              className="flex-1 bg-white/90 hover:bg-white text-[#151515] py-2.5 px-3 text-[11px] font-medium uppercase tracking-wider flex items-center justify-center gap-1.5 transition rounded-sm"
+              className="flex-1 bg-[#1C1812]/95 hover:bg-[#C5A059] text-[#F5EEDB] hover:text-[#0A0A0A] border border-[#2E261B] hover:border-[#C5A059] py-2.5 px-3 text-[11px] font-medium uppercase tracking-wider flex items-center justify-center gap-1.5 transition rounded-sm"
             >
               <Eye className="w-3.5 h-3.5" />
               <span>Quick View</span>
@@ -117,10 +117,10 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
             type="button"
             onClick={handleAddToCart}
             disabled={product.stock_quantity === 0}
-            className={`flex-1 py-2.5 px-3 text-[11px] font-medium uppercase tracking-wider flex items-center justify-center gap-1.5 transition rounded-sm ${
+            className={`flex-1 py-2.5 px-3 text-[11px] font-semibold uppercase tracking-wider flex items-center justify-center gap-1.5 transition rounded-sm ${
               product.stock_quantity === 0
-                ? 'bg-[#444] text-[#999] cursor-not-allowed'
-                : 'bg-[#B69A69] hover:bg-[#8E7444] text-[#151515] hover:text-white'
+                ? 'bg-[#222] text-[#666] cursor-not-allowed'
+                : 'bg-[#C5A059] hover:bg-[#D4AF37] text-[#0A0A0A]'
             }`}
           >
             {isAdding ? (
@@ -143,25 +143,25 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
       {/* Details Box */}
       <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between">
         <div>
-          <span className="text-[10px] uppercase tracking-[0.2em] text-[#B69A69] font-medium block">
+          <span className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-medium block">
             {product.style || 'The Fifth Wall'}
           </span>
-          <h3 className="font-serif text-lg text-[#151515] group-hover:text-[#B69A69] transition mt-1 font-normal line-clamp-1">
+          <h3 className="font-serif text-lg text-[#F5EEDB] group-hover:text-[#C5A059] transition mt-1 font-normal line-clamp-1">
             <Link href={`/products/${product.slug}`}>{product.name}</Link>
           </h3>
-          <p className="text-xs text-[#78746D] line-clamp-1 mt-0.5">
+          <p className="text-xs text-[#9E9788] line-clamp-1 mt-0.5">
             {product.finish || product.material}
           </p>
         </div>
 
         {/* Pricing */}
-        <div className="mt-4 pt-3 border-t border-[#EAE3D8] flex items-baseline justify-between">
+        <div className="mt-4 pt-3 border-t border-[#2E261B] flex items-baseline justify-between">
           <div className="flex items-baseline gap-2">
-            <span className="font-medium text-base text-[#151515]">
+            <span className="font-medium text-base text-[#F5EEDB]">
               {formatINR(product.price_in_paise)}
             </span>
             {product.compare_at_price_in_paise && (
-              <span className="text-xs text-[#999] line-through">
+              <span className="text-xs text-[#7A7264] line-through">
                 {formatINR(product.compare_at_price_in_paise)}
               </span>
             )}
@@ -169,7 +169,7 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
 
           <span
             className={`text-[10px] tracking-wider uppercase font-semibold ${
-              product.stock_quantity > 0 ? 'text-[#16a34a]' : 'text-[#b91c1c]'
+              product.stock_quantity > 0 ? 'text-[#86efac]' : 'text-[#f87171]'
             }`}
           >
             {product.stock_quantity > 0 ? 'In Stock' : 'Pre-order'}

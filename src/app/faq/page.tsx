@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ChevronDown, HelpCircle, ArrowRight } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 
 const FAQS = [
   {
@@ -39,19 +39,19 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="pt-28 pb-24 bg-[#F6F3ED] min-h-screen">
+    <div className="pt-28 pb-24 bg-[#0A0A0A] min-h-screen text-[#F5EEDB]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center space-y-3">
           <span className="section-kicker">Client Inquiries</span>
-          <h1 className="font-serif text-3xl sm:text-5xl text-[#151515] font-light">
-            Frequently Asked <em>Questions.</em>
+          <h1 className="font-serif text-3xl sm:text-5xl text-[#F5EEDB] font-light">
+            Frequently Asked <em className="text-[#C5A059]">Questions.</em>
           </h1>
-          <p className="text-xs sm:text-sm text-[#78746D] max-w-lg mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#9E9788] max-w-lg mx-auto leading-relaxed">
             Essential information regarding our materials, electrical standards, white-glove transit, and architectural consultation.
           </p>
         </div>
 
-        <div className="bg-white border border-[#EAE3D8] rounded-sm divide-y divide-[#EAE3D8] shadow-sm">
+        <div className="bg-[#141414] border border-[#2E261B] rounded-sm divide-y divide-[#2E261B] shadow-2xl">
           {FAQS.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
@@ -61,17 +61,17 @@ export default function FAQPage() {
                   onClick={() => toggle(idx)}
                   className="w-full flex items-center justify-between text-left gap-4"
                 >
-                  <span className="font-serif text-lg text-[#151515] font-medium">
+                  <span className="font-serif text-lg text-[#F5EEDB] font-medium">
                     {item.q}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-[#B69A69] transition-transform flex-shrink-0 ${
+                    className={`w-5 h-5 text-[#C5A059] transition-transform flex-shrink-0 ${
                       isOpen ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <p className="text-xs text-[#555] leading-relaxed mt-3 pt-3 border-t border-[#F6F3ED] animate-fadeIn">
+                  <p className="text-xs text-[#9E9788] leading-relaxed mt-3 pt-3 border-t border-[#2E261B] animate-fadeIn">
                     {item.a}
                   </p>
                 )}
@@ -80,9 +80,9 @@ export default function FAQPage() {
           })}
         </div>
 
-        <div className="bg-[#242321] text-white p-8 rounded-sm text-center space-y-4">
-          <h3 className="font-serif text-2xl font-light">Have a Specific Project Question?</h3>
-          <p className="text-xs text-[#D9CFC0] max-w-md mx-auto">
+        <div className="bg-[#101010] text-[#F5EEDB] p-8 rounded-sm border border-[#2E261B] text-center space-y-4 shadow-2xl">
+          <h3 className="font-serif text-2xl font-light text-[#F5EEDB]">Have a Specific Project Question?</h3>
+          <p className="text-xs text-[#9E9788] max-w-md mx-auto">
             Our lighting architects are on hand to review floorplans, ceiling heights, and electrical drawings.
           </p>
           <Link href="/contact" className="gold-button inline-flex py-3 px-6 text-xs tracking-wider">

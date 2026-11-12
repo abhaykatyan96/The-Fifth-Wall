@@ -31,26 +31,26 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="pt-28 pb-24 bg-[#F6F3ED] min-h-screen flex items-center justify-center">
-      <div className="max-w-md w-full mx-4 bg-white border border-[#EAE3D8] rounded-sm p-8 sm:p-10 shadow-lg space-y-6">
+    <div className="pt-28 pb-24 bg-[#0A0A0A] min-h-screen flex items-center justify-center text-[#F5EEDB]">
+      <div className="max-w-md w-full mx-4 bg-[#141414] border border-[#2E261B] rounded-sm p-8 sm:p-10 shadow-2xl space-y-6">
         <div className="text-center space-y-2">
           <span className="section-kicker">Client Portal</span>
-          <h1 className="font-serif text-3xl text-[#151515] font-light">Welcome Back</h1>
-          <p className="text-xs text-[#78746D]">
+          <h1 className="font-serif text-3xl text-[#F5EEDB] font-light">Welcome Back</h1>
+          <p className="text-xs text-[#9E9788]">
             Sign in to view your bespoke orders, saved addresses, and wishlist.
           </p>
         </div>
 
         {error && (
-          <div className="p-3 bg-[#fef2f2] text-[#b91c1c] text-xs rounded-sm border border-[#fecaca] flex items-center gap-2">
-            <AlertCircle className="w-4 h-4 flex-shrink-0" />
+          <div className="p-3 bg-[#1f1212] text-[#fca5a5] text-xs rounded-sm border border-[#f87171]/40 flex items-center gap-2">
+            <AlertCircle className="w-4 h-4 flex-shrink-0 text-[#f87171]" />
             <span>{error}</span>
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-[11px] uppercase tracking-wider text-[#151515] font-semibold mb-1.5">
+            <label className="block text-[11px] uppercase tracking-wider text-[#F5EEDB] font-semibold mb-1.5">
               Email Address
             </label>
             <div className="relative">
@@ -60,18 +60,18 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@example.com"
-                className="w-full bg-[#F6F3ED] border border-[#D9CFC0] text-xs pl-10 pr-4 py-3 text-[#151515] focus:outline-none focus:border-[#B69A69] rounded-sm"
+                className="w-full bg-[#181818] border border-[#2E261B] text-xs pl-10 pr-4 py-3 text-[#F5EEDB] placeholder-[#6E6759] focus:outline-none focus:border-[#C5A059] rounded-sm"
               />
-              <Mail className="w-4 h-4 text-[#78746D] absolute left-3.5 top-3.5" />
+              <Mail className="w-4 h-4 text-[#C5A059] absolute left-3.5 top-3.5" />
             </div>
           </div>
 
           <div>
             <div className="flex justify-between items-center mb-1.5">
-              <label className="text-[11px] uppercase tracking-wider text-[#151515] font-semibold">
+              <label className="text-[11px] uppercase tracking-wider text-[#F5EEDB] font-semibold">
                 Password
               </label>
-              <Link href="/forgot-password" className="text-[11px] text-[#B69A69] hover:underline">
+              <Link href="/forgot-password" className="text-[11px] text-[#C5A059] hover:underline">
                 Forgot Password?
               </Link>
             </div>
@@ -82,9 +82,9 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-[#F6F3ED] border border-[#D9CFC0] text-xs pl-10 pr-4 py-3 text-[#151515] focus:outline-none focus:border-[#B69A69] rounded-sm"
+                className="w-full bg-[#181818] border border-[#2E261B] text-xs pl-10 pr-4 py-3 text-[#F5EEDB] placeholder-[#6E6759] focus:outline-none focus:border-[#C5A059] rounded-sm"
               />
-              <Lock className="w-4 h-4 text-[#78746D] absolute left-3.5 top-3.5" />
+              <Lock className="w-4 h-4 text-[#C5A059] absolute left-3.5 top-3.5" />
             </div>
           </div>
 
@@ -104,16 +104,16 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <div className="pt-4 border-t border-[#EAE3D8] text-center space-y-2 text-xs text-[#78746D]">
+        <div className="pt-4 border-t border-[#2E261B] text-center space-y-2 text-xs text-[#9E9788]">
           <p>
             Don&apos;t have an account yet?{' '}
-            <Link href="/register" className="text-[#B69A69] font-medium hover:underline">
+            <Link href="/register" className="text-[#C5A059] font-medium hover:underline">
               Create an account
             </Link>
           </p>
           <p>
             Are you a showroom manager?{' '}
-            <Link href="/admin/dashboard" className="text-[#151515] font-semibold hover:underline">
+            <Link href="/admin/dashboard" className="text-[#F5EEDB] font-semibold hover:text-[#C5A059] hover:underline">
               Admin Portal
             </Link>
           </p>

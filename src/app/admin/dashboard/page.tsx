@@ -89,7 +89,7 @@ export default function AdminDashboardPage() {
     isBestseller: false,
     isNewArrival: true,
     isActive: true,
-    primaryImageUrl: 'https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?auto=format&fit=crop&w=1200&q=85',
+    primaryImageUrl: '/images/products/infinity-brass-chandelier.jpg',
   });
   const [productActionLoading, setProductActionLoading] = useState(false);
 
@@ -216,8 +216,8 @@ export default function AdminDashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#151515] text-[#F6F3ED] flex items-center justify-center text-xs tracking-widest uppercase">
-        <Loader2 className="w-6 h-6 text-[#B69A69] animate-spin mr-3" />
+      <div className="min-h-screen bg-[#0A0A0A] text-[#F5EEDB] flex items-center justify-center text-xs tracking-widest uppercase">
+        <Loader2 className="w-6 h-6 text-[#C5A059] animate-spin mr-3" />
         <span>Authenticating Admin Environment...</span>
       </div>
     );
@@ -226,17 +226,19 @@ export default function AdminDashboardPage() {
   if (!authorized) return null;
 
   return (
-    <div className="min-h-screen bg-[#1F1E1C] text-[#F6F3ED] flex">
+    <div className="min-h-screen bg-[#0A0A0A] text-[#F5EEDB] flex">
       {/* Admin Sidebar Navigation */}
-      <aside className="w-64 bg-[#151515] border-r border-[#2C2A28] flex flex-col justify-between flex-shrink-0">
+      <aside className="w-64 bg-[#0D0D0D] border-r border-[#2E261B] flex flex-col justify-between flex-shrink-0">
         <div>
           {/* Logo / Title */}
-          <div className="p-6 border-b border-[#2C2A28]">
-            <Link href="/" target="_blank" className="block group">
-              <span className="font-serif text-xl tracking-[0.2em] font-light text-white uppercase block">
-                THE FIFTH WALL
-              </span>
-              <span className="text-[9px] tracking-[0.3em] uppercase text-[#B69A69] font-medium flex items-center gap-1 mt-0.5">
+          <div className="p-6 border-b border-[#2E261B]">
+            <Link href="/" target="_blank" className="block group space-y-1">
+              <img
+                src="/images/logo.png"
+                alt="THE FIFTH WALL"
+                className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+              <span className="text-[9px] tracking-[0.3em] uppercase text-[#C5A059] font-medium flex items-center gap-1 mt-1">
                 <span>Studio Admin</span>
                 <ExternalLink className="w-2.5 h-2.5 opacity-60 group-hover:opacity-100" />
               </span>
@@ -264,8 +266,8 @@ export default function AdminDashboardPage() {
                   onClick={() => setActiveTab(tab.id as typeof activeTab)}
                   className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-sm transition text-left font-medium ${
                     isActive
-                      ? 'bg-[#2A2826] text-[#B69A69] font-semibold border-l-2 border-[#B69A69]'
-                      : 'text-[#9B978F] hover:bg-[#242321] hover:text-white'
+                      ? 'bg-[#1C1812] text-[#C5A059] font-semibold border-l-2 border-[#C5A059]'
+                      : 'text-[#9E9788] hover:bg-[#181818] hover:text-[#F5EEDB]'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -277,11 +279,11 @@ export default function AdminDashboardPage() {
         </div>
 
         {/* Bottom User Bar */}
-        <div className="p-4 border-t border-[#2C2A28]">
+        <div className="p-4 border-t border-[#2E261B]">
           <div className="flex items-center justify-between">
             <div className="text-xs">
-              <span className="text-white block font-medium">Administrator</span>
-              <span className="text-[10px] text-[#78746D]">admin@thefifthwall.in</span>
+              <span className="text-[#F5EEDB] block font-medium">Administrator</span>
+              <span className="text-[10px] text-[#9E9788]">admin@thefifthwall.in</span>
             </div>
             <button
               type="button"
@@ -301,104 +303,104 @@ export default function AdminDashboardPage() {
         {activeTab === 'overview' && (
           <div className="space-y-8 animate-fadeIn">
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-[#B69A69] font-medium block">
+              <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-medium block">
                 Executive Portal
               </span>
-              <h2 className="font-serif text-3xl font-light text-white mt-1">
+              <h2 className="font-serif text-3xl font-light text-[#F5EEDB] mt-1">
                 Performance Analytics
               </h2>
             </div>
 
             {/* KPI Metrics Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-[#242321] border border-[#383633] p-6 rounded-sm shadow-sm space-y-2">
-                <span className="text-xs text-[#9B978F] uppercase tracking-wider block">Total Revenue</span>
+              <div className="bg-[#141414] border border-[#2E261B] p-6 rounded-sm shadow-xl space-y-2">
+                <span className="text-xs text-[#9E9788] uppercase tracking-wider block">Total Revenue</span>
                 <div className="flex items-baseline justify-between">
-                  <span className="font-serif text-3xl font-medium text-white">
+                  <span className="font-serif text-3xl font-medium text-[#F5EEDB]">
                     {formatINR(stats.totalRevenueInPaise)}
                   </span>
-                  <TrendingUp className="w-5 h-5 text-[#16a34a]" />
+                  <TrendingUp className="w-5 h-5 text-[#34D399]" />
                 </div>
-                <p className="text-[11px] text-[#86efac]">From confirmed and completed orders</p>
+                <p className="text-[11px] text-[#34D399]">From confirmed and completed orders</p>
               </div>
 
-              <div className="bg-[#242321] border border-[#383633] p-6 rounded-sm shadow-sm space-y-2">
-                <span className="text-xs text-[#9B978F] uppercase tracking-wider block">Total Orders</span>
+              <div className="bg-[#141414] border border-[#2E261B] p-6 rounded-sm shadow-xl space-y-2">
+                <span className="text-xs text-[#9E9788] uppercase tracking-wider block">Total Orders</span>
                 <div className="flex items-baseline justify-between">
-                  <span className="font-serif text-3xl font-medium text-white">{stats.totalOrders}</span>
-                  <ShoppingBag className="w-5 h-5 text-[#B69A69]" />
+                  <span className="font-serif text-3xl font-medium text-[#F5EEDB]">{stats.totalOrders}</span>
+                  <ShoppingBag className="w-5 h-5 text-[#C5A059]" />
                 </div>
-                <p className="text-[11px] text-[#9B978F]">Across all luxury collections</p>
+                <p className="text-[11px] text-[#9E9788]">Across all luxury collections</p>
               </div>
 
-              <div className="bg-[#242321] border border-[#383633] p-6 rounded-sm shadow-sm space-y-2">
-                <span className="text-xs text-[#9B978F] uppercase tracking-wider block">Architectural Portfolio</span>
+              <div className="bg-[#141414] border border-[#2E261B] p-6 rounded-sm shadow-xl space-y-2">
+                <span className="text-xs text-[#9E9788] uppercase tracking-wider block">Architectural Portfolio</span>
                 <div className="flex items-baseline justify-between">
-                  <span className="font-serif text-3xl font-medium text-white">{stats.totalProducts} Pieces</span>
-                  <Package className="w-5 h-5 text-[#B69A69]" />
+                  <span className="font-serif text-3xl font-medium text-[#F5EEDB]">{stats.totalProducts} Pieces</span>
+                  <Package className="w-5 h-5 text-[#C5A059]" />
                 </div>
-                <p className="text-[11px] text-[#9B978F]">
+                <p className="text-[11px] text-[#9E9788]">
                   {stats.lowStockCount > 0 ? (
-                    <span className="text-[#f59e0b] font-medium">⚠ {stats.lowStockCount} items low in stock</span>
+                    <span className="text-[#F59E0B] font-medium">⚠ {stats.lowStockCount} items low in stock</span>
                   ) : (
                     'All items well stocked'
                   )}
                 </p>
               </div>
 
-              <div className="bg-[#242321] border border-[#383633] p-6 rounded-sm shadow-sm space-y-2">
-                <span className="text-xs text-[#9B978F] uppercase tracking-wider block">Design Inquiries</span>
+              <div className="bg-[#141414] border border-[#2E261B] p-6 rounded-sm shadow-xl space-y-2">
+                <span className="text-xs text-[#9E9788] uppercase tracking-wider block">Design Inquiries</span>
                 <div className="flex items-baseline justify-between">
-                  <span className="font-serif text-3xl font-medium text-white">{stats.pendingConsultations} Pending</span>
-                  <MessageSquare className="w-5 h-5 text-[#B69A69]" />
+                  <span className="font-serif text-3xl font-medium text-[#F5EEDB]">{stats.pendingConsultations} Pending</span>
+                  <MessageSquare className="w-5 h-5 text-[#C5A059]" />
                 </div>
-                <p className="text-[11px] text-[#9B978F]">Architectural consultations requiring response</p>
+                <p className="text-[11px] text-[#9E9788]">Architectural consultations requiring response</p>
               </div>
 
-              <div className="bg-[#242321] border border-[#383633] p-6 rounded-sm shadow-sm space-y-2">
-                <span className="text-xs text-[#9B978F] uppercase tracking-wider block">Private Journal</span>
+              <div className="bg-[#141414] border border-[#2E261B] p-6 rounded-sm shadow-xl space-y-2">
+                <span className="text-xs text-[#9E9788] uppercase tracking-wider block">Private Journal</span>
                 <div className="flex items-baseline justify-between">
-                  <span className="font-serif text-3xl font-medium text-white">{subscribers.length} Subscribers</span>
-                  <Mail className="w-5 h-5 text-[#B69A69]" />
+                  <span className="font-serif text-3xl font-medium text-[#F5EEDB]">{subscribers.length} Subscribers</span>
+                  <Mail className="w-5 h-5 text-[#C5A059]" />
                 </div>
-                <p className="text-[11px] text-[#9B978F]">Active newsletter recipients</p>
+                <p className="text-[11px] text-[#9E9788]">Active newsletter recipients</p>
               </div>
 
-              <div className="bg-[#242321] border border-[#383633] p-6 rounded-sm shadow-sm space-y-2">
-                <span className="text-xs text-[#9B978F] uppercase tracking-wider block">Payment Verification</span>
+              <div className="bg-[#141414] border border-[#2E261B] p-6 rounded-sm shadow-xl space-y-2">
+                <span className="text-xs text-[#9E9788] uppercase tracking-wider block">Payment Verification</span>
                 <div className="flex items-baseline justify-between">
-                  <span className="font-serif text-3xl font-medium text-white">Razorpay 100%</span>
-                  <CheckCircle2 className="w-5 h-5 text-[#16a34a]" />
+                  <span className="font-serif text-3xl font-medium text-[#F5EEDB]">Razorpay 100%</span>
+                  <CheckCircle2 className="w-5 h-5 text-[#34D399]" />
                 </div>
-                <p className="text-[11px] text-[#86efac]">Cryptographic signature verification active</p>
+                <p className="text-[11px] text-[#34D399]">Cryptographic signature verification active</p>
               </div>
             </div>
 
             {/* Recent Orders Overview */}
-            <div className="bg-[#242321] border border-[#383633] rounded-sm p-6 space-y-4">
-              <div className="flex items-center justify-between border-b border-[#383633] pb-4">
-                <h3 className="font-serif text-xl text-white">Recent Consignments</h3>
+            <div className="bg-[#141414] border border-[#2E261B] rounded-sm p-6 space-y-4 shadow-xl">
+              <div className="flex items-center justify-between border-b border-[#2E261B] pb-4">
+                <h3 className="font-serif text-xl text-[#F5EEDB]">Recent Consignments</h3>
                 <button
                   type="button"
                   onClick={() => setActiveTab('orders')}
-                  className="text-xs text-[#B69A69] hover:underline uppercase tracking-wider"
+                  className="text-xs text-[#C5A059] hover:underline uppercase tracking-wider"
                 >
                   View All Orders →
                 </button>
               </div>
 
-              <div className="divide-y divide-[#383633] text-xs">
+              <div className="divide-y divide-[#2E261B] text-xs">
                 {orders.slice(0, 5).map((ord) => (
                   <div key={ord.id} className="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div>
-                      <span className="font-mono font-bold text-white mr-3">{ord.order_number}</span>
-                      <span className="text-[#9B978F]">{ord.customer_name} ({ord.customer_email})</span>
+                      <span className="font-mono font-bold text-[#F5EEDB] mr-3">{ord.order_number}</span>
+                      <span className="text-[#9E9788]">{ord.customer_name} ({ord.customer_email})</span>
                     </div>
                     <div className="flex items-center gap-4">
-                      <span className="capitalize bg-[#151515] text-[#D4C39E] px-2 py-0.5 rounded-sm">
+                      <span className="capitalize bg-[#181818] border border-[#2E261B] text-[#E5C378] px-2 py-0.5 rounded-sm">
                         {ord.status.replace('_', ' ')}
                       </span>
-                      <span className="font-medium text-white">{formatINR(ord.total_in_paise)}</span>
+                      <span className="font-medium text-[#F5EEDB]">{formatINR(ord.total_in_paise)}</span>
                     </div>
                   </div>
                 ))}
@@ -412,10 +414,10 @@ export default function AdminDashboardPage() {
           <div className="space-y-6 animate-fadeIn">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <span className="text-[10px] uppercase tracking-widest text-[#B69A69] font-medium block">
+                <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-medium block">
                   Catalogue Administration
                 </span>
-                <h2 className="font-serif text-3xl font-light text-white mt-1">
+                <h2 className="font-serif text-3xl font-light text-[#F5EEDB] mt-1">
                   Products & Inventory ({products.length})
                 </h2>
               </div>
@@ -431,11 +433,11 @@ export default function AdminDashboardPage() {
 
             {/* Add Product Modal/Form */}
             {showAddProduct && (
-              <form onSubmit={handleCreateProduct} className="bg-[#242321] border border-[#B69A69] p-6 rounded-sm space-y-4 text-xs">
-                <h3 className="font-serif text-xl text-white mb-2">Publish New Illumination Piece</h3>
+              <form onSubmit={handleCreateProduct} className="bg-[#141414] border border-[#C5A059] p-6 rounded-sm space-y-4 text-xs shadow-2xl">
+                <h3 className="font-serif text-xl text-[#F5EEDB] mb-2">Publish New Illumination Piece</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-[#9B978F] mb-1">Product Name *</label>
+                    <label className="block text-[10px] uppercase tracking-wider text-[#9E9788] mb-1">Product Name *</label>
                     <input
                       type="text"
                       required
@@ -448,25 +450,25 @@ export default function AdminDashboardPage() {
                         })
                       }
                       placeholder="e.g. Solis Pendant"
-                      className="w-full bg-[#151515] border border-[#383633] p-2.5 text-white rounded-sm focus:outline-none"
+                      className="w-full bg-[#181818] border border-[#2E261B] p-2.5 text-[#F5EEDB] rounded-sm focus:outline-none focus:border-[#C5A059]"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-[#9B978F] mb-1">URL Slug *</label>
+                    <label className="block text-[10px] uppercase tracking-wider text-[#9E9788] mb-1">URL Slug *</label>
                     <input
                       type="text"
                       required
                       value={newProduct.slug}
                       onChange={(e) => setNewProduct({ ...newProduct, slug: e.target.value })}
-                      className="w-full bg-[#151515] border border-[#383633] p-2.5 text-white rounded-sm focus:outline-none font-mono"
+                      className="w-full bg-[#181818] border border-[#2E261B] p-2.5 text-[#F5EEDB] rounded-sm focus:outline-none focus:border-[#C5A059] font-mono"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-[#9B978F] mb-1">Category *</label>
+                    <label className="block text-[10px] uppercase tracking-wider text-[#9E9788] mb-1">Category *</label>
                     <select
                       value={newProduct.categoryId}
                       onChange={(e) => setNewProduct({ ...newProduct, categoryId: e.target.value })}
-                      className="w-full bg-[#151515] border border-[#383633] p-2.5 text-white rounded-sm focus:outline-none"
+                      className="w-full bg-[#181818] border border-[#2E261B] p-2.5 text-[#F5EEDB] rounded-sm focus:outline-none focus:border-[#C5A059]"
                     >
                       {categories.map((c) => (
                         <option key={c.id} value={c.id}>{c.name}</option>
@@ -477,114 +479,114 @@ export default function AdminDashboardPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-[#9B978F] mb-1">Price (₹ INR) *</label>
+                    <label className="block text-[10px] uppercase tracking-wider text-[#9E9788] mb-1">Price (₹ INR) *</label>
                     <input
                       type="number"
                       required
                       value={newProduct.priceInRupees}
                       onChange={(e) => setNewProduct({ ...newProduct, priceInRupees: parseFloat(e.target.value) })}
-                      className="w-full bg-[#151515] border border-[#383633] p-2.5 text-white rounded-sm focus:outline-none"
+                      className="w-full bg-[#181818] border border-[#2E261B] p-2.5 text-[#F5EEDB] rounded-sm focus:outline-none focus:border-[#C5A059]"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-[#9B978F] mb-1">Compare-At Price (₹ INR)</label>
+                    <label className="block text-[10px] uppercase tracking-wider text-[#9E9788] mb-1">Compare-At Price (₹ INR)</label>
                     <input
                       type="number"
                       value={newProduct.compareAtPriceInRupees}
                       onChange={(e) => setNewProduct({ ...newProduct, compareAtPriceInRupees: parseFloat(e.target.value) })}
-                      className="w-full bg-[#151515] border border-[#383633] p-2.5 text-white rounded-sm focus:outline-none"
+                      className="w-full bg-[#181818] border border-[#2E261B] p-2.5 text-[#F5EEDB] rounded-sm focus:outline-none focus:border-[#C5A059]"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-[#9B978F] mb-1">Inventory Stock *</label>
+                    <label className="block text-[10px] uppercase tracking-wider text-[#9E9788] mb-1">Inventory Stock *</label>
                     <input
                       type="number"
                       required
                       value={newProduct.stockQuantity}
                       onChange={(e) => setNewProduct({ ...newProduct, stockQuantity: parseInt(e.target.value, 10) })}
-                      className="w-full bg-[#151515] border border-[#383633] p-2.5 text-white rounded-sm focus:outline-none"
+                      className="w-full bg-[#181818] border border-[#2E261B] p-2.5 text-[#F5EEDB] rounded-sm focus:outline-none focus:border-[#C5A059]"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-[#9B978F] mb-1">Material</label>
+                    <label className="block text-[10px] uppercase tracking-wider text-[#9E9788] mb-1">Material</label>
                     <input
                       type="text"
                       value={newProduct.material}
                       onChange={(e) => setNewProduct({ ...newProduct, material: e.target.value })}
-                      className="w-full bg-[#151515] border border-[#383633] p-2.5 text-white rounded-sm focus:outline-none"
+                      className="w-full bg-[#181818] border border-[#2E261B] p-2.5 text-[#F5EEDB] rounded-sm focus:outline-none focus:border-[#C5A059]"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-[#9B978F] mb-1">Finish</label>
+                    <label className="block text-[10px] uppercase tracking-wider text-[#9E9788] mb-1">Finish</label>
                     <input
                       type="text"
                       value={newProduct.finish}
                       onChange={(e) => setNewProduct({ ...newProduct, finish: e.target.value })}
-                      className="w-full bg-[#151515] border border-[#383633] p-2.5 text-white rounded-sm focus:outline-none"
+                      className="w-full bg-[#181818] border border-[#2E261B] p-2.5 text-[#F5EEDB] rounded-sm focus:outline-none focus:border-[#C5A059]"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-[#9B978F] mb-1">Dimensions</label>
+                    <label className="block text-[10px] uppercase tracking-wider text-[#9E9788] mb-1">Dimensions</label>
                     <input
                       type="text"
                       value={newProduct.dimensions}
                       onChange={(e) => setNewProduct({ ...newProduct, dimensions: e.target.value })}
-                      className="w-full bg-[#151515] border border-[#383633] p-2.5 text-white rounded-sm focus:outline-none"
+                      className="w-full bg-[#181818] border border-[#2E261B] p-2.5 text-[#F5EEDB] rounded-sm focus:outline-none focus:border-[#C5A059]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-[#9B978F] mb-1">Primary Image URL *</label>
+                  <label className="block text-[10px] uppercase tracking-wider text-[#9E9788] mb-1">Primary Image URL *</label>
                   <input
                     type="url"
                     required
                     value={newProduct.primaryImageUrl}
                     onChange={(e) => setNewProduct({ ...newProduct, primaryImageUrl: e.target.value })}
-                    className="w-full bg-[#151515] border border-[#383633] p-2.5 text-white rounded-sm focus:outline-none"
+                    className="w-full bg-[#181818] border border-[#2E261B] p-2.5 text-[#F5EEDB] rounded-sm focus:outline-none focus:border-[#C5A059]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-[#9B978F] mb-1">Full Description *</label>
+                  <label className="block text-[10px] uppercase tracking-wider text-[#9E9788] mb-1">Full Description *</label>
                   <textarea
                     rows={3}
                     required
                     value={newProduct.description}
                     onChange={(e) => setNewProduct({ ...newProduct, description: e.target.value })}
                     placeholder="Rich description of craftsmanship, lighting characteristics, and finishes..."
-                    className="w-full bg-[#151515] border border-[#383633] p-2.5 text-white rounded-sm focus:outline-none resize-none"
+                    className="w-full bg-[#181818] border border-[#2E261B] p-2.5 text-[#F5EEDB] rounded-sm focus:outline-none focus:border-[#C5A059] resize-none"
                   />
                 </div>
 
                 <div className="flex items-center gap-6 pt-2">
-                  <label className="flex items-center gap-2 cursor-pointer">
+                  <label className="flex items-center gap-2 cursor-pointer text-[#F5EEDB]">
                     <input
                       type="checkbox"
                       checked={newProduct.isFeatured}
                       onChange={(e) => setNewProduct({ ...newProduct, isFeatured: e.target.checked })}
-                      className="accent-[#B69A69]"
+                      className="accent-[#C5A059]"
                     />
                     <span>Featured Piece</span>
                   </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
+                  <label className="flex items-center gap-2 cursor-pointer text-[#F5EEDB]">
                     <input
                       type="checkbox"
                       checked={newProduct.isBestseller}
                       onChange={(e) => setNewProduct({ ...newProduct, isBestseller: e.target.checked })}
-                      className="accent-[#B69A69]"
+                      className="accent-[#C5A059]"
                     />
                     <span>Bestseller</span>
                   </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
+                  <label className="flex items-center gap-2 cursor-pointer text-[#F5EEDB]">
                     <input
                       type="checkbox"
                       checked={newProduct.isNewArrival}
                       onChange={(e) => setNewProduct({ ...newProduct, isNewArrival: e.target.checked })}
-                      className="accent-[#B69A69]"
+                      className="accent-[#C5A059]"
                     />
                     <span>New Arrival</span>
                   </label>
@@ -603,9 +605,9 @@ export default function AdminDashboardPage() {
             )}
 
             {/* Products Table */}
-            <div className="bg-[#242321] border border-[#383633] rounded-sm overflow-x-auto shadow-sm">
+            <div className="bg-[#141414] border border-[#2E261B] rounded-sm overflow-x-auto shadow-xl">
               <table className="w-full text-left text-xs">
-                <thead className="bg-[#151515] text-[#9B978F] uppercase tracking-wider text-[10px] border-b border-[#383633]">
+                <thead className="bg-[#101010] text-[#9E9788] uppercase tracking-wider text-[10px] border-b border-[#2E261B]">
                   <tr>
                     <th className="p-4">Piece</th>
                     <th className="p-4">Finish / Material</th>
@@ -615,28 +617,28 @@ export default function AdminDashboardPage() {
                     <th className="p-4 text-right">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#383633]">
+                <tbody className="divide-y divide-[#2E261B]">
                   {products.map((p) => (
-                    <tr key={p.id} className="hover:bg-[#2C2A28] transition">
+                    <tr key={p.id} className="hover:bg-[#1A1812] transition">
                       <td className="p-4 flex items-center space-x-3">
                         <img
                           src={p.primary_image_url}
                           alt={p.name}
-                          className="w-10 h-12 object-cover rounded-sm border border-[#383633]"
+                          className="w-10 h-12 object-cover rounded-sm border border-[#2E261B]"
                         />
                         <div>
-                          <span className="font-serif font-medium text-white block">{p.name}</span>
-                          <span className="text-[10px] text-[#78746D] font-mono">{p.slug}</span>
+                          <span className="font-serif font-medium text-[#F5EEDB] block">{p.name}</span>
+                          <span className="text-[10px] text-[#9E9788] font-mono">{p.slug}</span>
                         </div>
                       </td>
-                      <td className="p-4 text-[#9B978F]">
-                        {p.finish} <br /><span className="text-[10px] text-[#78746D]">{p.material}</span>
+                      <td className="p-4 text-[#9E9788]">
+                        {p.finish} <br /><span className="text-[10px] text-[#9E9788]">{p.material}</span>
                       </td>
-                      <td className="p-4 font-medium text-white">{formatINR(p.price_in_paise)}</td>
+                      <td className="p-4 font-medium text-[#F5EEDB]">{formatINR(p.price_in_paise)}</td>
                       <td className="p-4">
                         <span
                           className={`font-semibold ${
-                            p.stock_quantity < 5 ? 'text-[#f59e0b]' : 'text-[#86efac]'
+                            p.stock_quantity < 5 ? 'text-[#F59E0B]' : 'text-[#34D399]'
                           }`}
                         >
                           {p.stock_quantity} units
@@ -644,22 +646,22 @@ export default function AdminDashboardPage() {
                       </td>
                       <td className="p-4">
                         <div className="flex gap-1">
-                          {p.is_featured && <span className="bg-[#151515] text-[#B69A69] text-[9px] px-1.5 py-0.5 rounded">Featured</span>}
-                          {p.is_bestseller && <span className="bg-[#151515] text-[#86efac] text-[9px] px-1.5 py-0.5 rounded">Bestseller</span>}
+                          {p.is_featured && <span className="bg-[#181818] border border-[#2E261B] text-[#C5A059] text-[9px] px-1.5 py-0.5 rounded">Featured</span>}
+                          {p.is_bestseller && <span className="bg-[#181818] border border-[#2E261B] text-[#34D399] text-[9px] px-1.5 py-0.5 rounded">Bestseller</span>}
                         </div>
                       </td>
                       <td className="p-4 text-right space-x-2">
                         <Link
                           href={`/products/${p.slug}`}
                           target="_blank"
-                          className="text-[#B69A69] hover:underline"
+                          className="text-[#C5A059] hover:underline"
                         >
                           View
                         </Link>
                         <button
                           type="button"
                           onClick={() => handleDeleteProduct(p.id, p.name)}
-                          className="text-[#f87171] hover:underline ml-3"
+                          className="text-[#F87171] hover:underline ml-3"
                         >
                           Remove
                         </button>
@@ -676,17 +678,17 @@ export default function AdminDashboardPage() {
         {activeTab === 'orders' && (
           <div className="space-y-6 animate-fadeIn">
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-[#B69A69] font-medium block">
+              <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-medium block">
                 Fulfillment Management
               </span>
-              <h2 className="font-serif text-3xl font-light text-white mt-1">
+              <h2 className="font-serif text-3xl font-light text-[#F5EEDB] mt-1">
                 Order Consignments ({orders.length})
               </h2>
             </div>
 
-            <div className="bg-[#242321] border border-[#383633] rounded-sm overflow-x-auto shadow-sm">
+            <div className="bg-[#141414] border border-[#2E261B] rounded-sm overflow-x-auto shadow-xl">
               <table className="w-full text-left text-xs">
-                <thead className="bg-[#151515] text-[#9B978F] uppercase tracking-wider text-[10px] border-b border-[#383633]">
+                <thead className="bg-[#101010] text-[#9E9788] uppercase tracking-wider text-[10px] border-b border-[#2E261B]">
                   <tr>
                     <th className="p-4">Order Ref</th>
                     <th className="p-4">Client</th>
@@ -697,35 +699,35 @@ export default function AdminDashboardPage() {
                     <th className="p-4 text-right">Update</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#383633]">
+                <tbody className="divide-y divide-[#2E261B]">
                   {orders.map((ord) => (
-                    <tr key={ord.id} className="hover:bg-[#2C2A28] transition">
-                      <td className="p-4 font-mono font-bold text-white">{ord.order_number}</td>
+                    <tr key={ord.id} className="hover:bg-[#1A1812] transition">
+                      <td className="p-4 font-mono font-bold text-[#F5EEDB]">{ord.order_number}</td>
                       <td className="p-4">
-                        <span className="text-white block font-medium">{ord.customer_name}</span>
-                        <span className="text-[10px] text-[#78746D]">{ord.customer_email}</span>
+                        <span className="text-[#F5EEDB] block font-medium">{ord.customer_name}</span>
+                        <span className="text-[10px] text-[#9E9788]">{ord.customer_email}</span>
                       </td>
-                      <td className="p-4 text-[#9B978F]">
+                      <td className="p-4 text-[#9E9788]">
                         {ord.shipping_address.city}, {ord.shipping_address.state}
                       </td>
-                      <td className="p-4 font-serif font-bold text-white">{formatINR(ord.total_in_paise)}</td>
+                      <td className="p-4 font-serif font-bold text-[#F5EEDB]">{formatINR(ord.total_in_paise)}</td>
                       <td className="p-4">
-                        <span className="text-[#86efac] uppercase text-[10px] font-bold">
+                        <span className="text-[#34D399] uppercase text-[10px] font-bold">
                           {ord.payment_method} · {ord.payment_status}
                         </span>
                       </td>
                       <td className="p-4">
-                        <span className="bg-[#151515] text-[#D4C39E] px-2.5 py-1 rounded-sm uppercase text-[10px] font-semibold">
+                        <span className="bg-[#181818] border border-[#2E261B] text-[#E5C378] px-2.5 py-1 rounded-sm uppercase text-[10px] font-semibold">
                           {ord.status.replace('_', ' ')}
                         </span>
                       </td>
                       <td className="p-4 text-right">
                         {updatingOrderId === ord.id ? (
-                          <div className="inline-flex flex-col gap-2 p-2 bg-[#151515] border border-[#B69A69] rounded-sm">
+                          <div className="inline-flex flex-col gap-2 p-2 bg-[#181818] border border-[#C5A059] rounded-sm">
                             <select
                               value={newStatus}
                               onChange={(e) => setNewStatus(e.target.value)}
-                              className="bg-[#242321] text-white p-1 text-xs border border-[#383633]"
+                              className="bg-[#141414] text-[#F5EEDB] p-1 text-xs border border-[#2E261B]"
                             >
                               <option value="pending">Pending</option>
                               <option value="confirmed">Confirmed</option>
@@ -740,20 +742,20 @@ export default function AdminDashboardPage() {
                               placeholder="Tracking No (e.g. BLUEDART-123)"
                               value={trackingNumber}
                               onChange={(e) => setTrackingNumber(e.target.value)}
-                              className="bg-[#242321] text-white p-1 text-xs border border-[#383633]"
+                              className="bg-[#141414] text-[#F5EEDB] p-1 text-xs border border-[#2E261B]"
                             />
                             <div className="flex gap-2 justify-end">
                               <button
                                 type="button"
                                 onClick={() => handleUpdateOrderStatus(ord.id)}
-                                className="bg-[#B69A69] text-black px-2 py-1 text-[10px] font-bold rounded"
+                                className="bg-gradient-to-r from-[#C5A059] to-[#D4AF37] text-[#0A0A0A] px-2 py-1 text-[10px] font-bold rounded"
                               >
                                 Save
                               </button>
                               <button
                                 type="button"
                                 onClick={() => setUpdatingOrderId(null)}
-                                className="text-[#999] px-2 py-1 text-[10px]"
+                                className="text-[#9E9788] px-2 py-1 text-[10px]"
                               >
                                 Cancel
                               </button>
@@ -766,7 +768,7 @@ export default function AdminDashboardPage() {
                               setUpdatingOrderId(ord.id);
                               setNewStatus(ord.status);
                             }}
-                            className="text-[#B69A69] hover:underline uppercase text-[10px] font-semibold"
+                            className="text-[#C5A059] hover:underline uppercase text-[10px] font-semibold"
                           >
                             Update Status
                           </button>
@@ -784,26 +786,26 @@ export default function AdminDashboardPage() {
         {activeTab === 'categories' && (
           <div className="space-y-6 animate-fadeIn">
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-[#B69A69] font-medium block">
+              <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-medium block">
                 Category Taxonomies
               </span>
-              <h2 className="font-serif text-3xl font-light text-white mt-1">
+              <h2 className="font-serif text-3xl font-light text-[#F5EEDB] mt-1">
                 Luxury Categories ({categories.length})
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {categories.map((c) => (
-                <div key={c.id} className="bg-[#242321] border border-[#383633] rounded-sm overflow-hidden flex flex-col">
-                  <div className="aspect-[16/9] bg-[#151515]">
+                <div key={c.id} className="bg-[#141414] border border-[#2E261B] rounded-sm overflow-hidden flex flex-col shadow-xl">
+                  <div className="aspect-[16/9] bg-[#101010]">
                     <img src={c.image_url || ''} alt={c.name} className="w-full h-full object-cover" />
                   </div>
                   <div className="p-4 flex-1 flex flex-col justify-between space-y-2">
                     <div>
-                      <h4 className="font-serif text-lg font-medium text-white">{c.name}</h4>
-                      <p className="text-xs text-[#9B978F] line-clamp-2 mt-1">{c.description}</p>
+                      <h4 className="font-serif text-lg font-medium text-[#F5EEDB]">{c.name}</h4>
+                      <p className="text-xs text-[#9E9788] line-clamp-2 mt-1">{c.description}</p>
                     </div>
-                    <div className="pt-2 border-t border-[#383633] flex justify-between text-[11px] text-[#B69A69]">
+                    <div className="pt-2 border-t border-[#2E261B] flex justify-between text-[11px] text-[#C5A059]">
                       <span className="font-mono">/collections/{c.slug}</span>
                       <Link href={`/collections/${c.slug}`} target="_blank" className="hover:underline">
                         Open →
@@ -820,45 +822,45 @@ export default function AdminDashboardPage() {
         {activeTab === 'enquiries' && (
           <div className="space-y-6 animate-fadeIn">
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-[#B69A69] font-medium block">
+              <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-medium block">
                 Architectural Advisory
               </span>
-              <h2 className="font-serif text-3xl font-light text-white mt-1">
+              <h2 className="font-serif text-3xl font-light text-[#F5EEDB] mt-1">
                 Design Consultations ({consultations.length})
               </h2>
             </div>
 
             <div className="space-y-4">
               {consultations.map((item) => (
-                <div key={item.id} className="bg-[#242321] border border-[#383633] p-6 rounded-sm text-xs space-y-3">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[#383633] gap-2">
+                <div key={item.id} className="bg-[#141414] border border-[#2E261B] p-6 rounded-sm text-xs space-y-3 shadow-xl">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[#2E261B] gap-2">
                     <div>
-                      <h4 className="font-serif text-lg text-white font-medium">{item.name}</h4>
-                      <span className="text-[#9B978F]">{item.email} · {item.phone}</span>
+                      <h4 className="font-serif text-lg text-[#F5EEDB] font-medium">{item.name}</h4>
+                      <span className="text-[#9E9788]">{item.email} · {item.phone}</span>
                     </div>
-                    <span className="bg-[#151515] text-[#B69A69] px-2.5 py-1 rounded-sm uppercase text-[10px] font-bold">
+                    <span className="bg-[#181818] border border-[#2E261B] text-[#C5A059] px-2.5 py-1 rounded-sm uppercase text-[10px] font-bold">
                       {item.status}
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-[#9B978F]">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-[#9E9788]">
                     <div>
-                      <strong className="text-white block">Room:</strong>
+                      <strong className="text-[#F5EEDB] block">Room:</strong>
                       <span>{item.room_type}</span>
                     </div>
                     <div>
-                      <strong className="text-white block">Project:</strong>
+                      <strong className="text-[#F5EEDB] block">Project:</strong>
                       <span>{item.project_type}</span>
                     </div>
                     <div>
-                      <strong className="text-white block">Budget Tier:</strong>
+                      <strong className="text-[#F5EEDB] block">Budget Tier:</strong>
                       <span>{item.budget}</span>
                     </div>
                   </div>
 
-                  <div className="bg-[#151515] p-3 rounded border border-[#2C2A28]">
-                    <strong className="text-white block mb-1">Client Vision Note:</strong>
-                    <p className="text-[#D9CFC0] italic leading-relaxed">&ldquo;{item.message}&rdquo;</p>
+                  <div className="bg-[#181818] p-3 rounded border border-[#2E261B]">
+                    <strong className="text-[#F5EEDB] block mb-1">Client Vision Note:</strong>
+                    <p className="text-[#E5C378] italic leading-relaxed">&ldquo;{item.message}&rdquo;</p>
                   </div>
                 </div>
               ))}
@@ -870,10 +872,10 @@ export default function AdminDashboardPage() {
         {activeTab === 'coupons' && (
           <div className="space-y-6 animate-fadeIn">
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-[#B69A69] font-medium block">
+              <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-medium block">
                 Promotions
               </span>
-              <h2 className="font-serif text-3xl font-light text-white mt-1">
+              <h2 className="font-serif text-3xl font-light text-[#F5EEDB] mt-1">
                 Active Promotional Coupons
               </h2>
             </div>
@@ -884,11 +886,11 @@ export default function AdminDashboardPage() {
                 { code: 'FIFTHWALL15', type: '15% Off', min: '₹20,000 min order', cap: 'Max ₹10,000' },
                 { code: 'LUXURY5000', type: 'Flat ₹5,000 Off', min: '₹30,000 min order', cap: 'Direct Deduction' },
               ].map((c) => (
-                <div key={c.code} className="bg-[#242321] border border-[#B69A69] p-6 rounded-sm text-xs space-y-2">
-                  <span className="font-mono text-lg font-bold text-white block">{c.code}</span>
-                  <span className="text-[#86efac] font-medium text-sm block">{c.type}</span>
-                  <p className="text-[#9B978F]">{c.min}</p>
-                  <p className="text-[#78746D]">{c.cap}</p>
+                <div key={c.code} className="bg-[#141414] border border-[#C5A059] p-6 rounded-sm text-xs space-y-2 shadow-xl">
+                  <span className="font-mono text-lg font-bold text-[#F5EEDB] block">{c.code}</span>
+                  <span className="text-[#34D399] font-medium text-sm block">{c.type}</span>
+                  <p className="text-[#9E9788]">{c.min}</p>
+                  <p className="text-[#6E6759]">{c.cap}</p>
                 </div>
               ))}
             </div>
@@ -899,19 +901,19 @@ export default function AdminDashboardPage() {
         {activeTab === 'newsletter' && (
           <div className="space-y-6 animate-fadeIn">
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-[#B69A69] font-medium block">
+              <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-medium block">
                 Direct Audience
               </span>
-              <h2 className="font-serif text-3xl font-light text-white mt-1">
+              <h2 className="font-serif text-3xl font-light text-[#F5EEDB] mt-1">
                 Subscribers ({subscribers.length})
               </h2>
             </div>
 
-            <div className="bg-[#242321] border border-[#383633] rounded-sm p-6 text-xs divide-y divide-[#383633]">
+            <div className="bg-[#141414] border border-[#2E261B] rounded-sm p-6 text-xs divide-y divide-[#2E261B] shadow-xl">
               {subscribers.map((s) => (
                 <div key={s.id} className="py-2.5 flex items-center justify-between">
-                  <span className="text-white font-medium">{s.email}</span>
-                  <span className="text-[#9B978F] text-[10px]">
+                  <span className="text-[#F5EEDB] font-medium">{s.email}</span>
+                  <span className="text-[#9E9788] text-[10px]">
                     Subscribed {new Date(s.created_at).toLocaleDateString()}
                   </span>
                 </div>
@@ -924,38 +926,38 @@ export default function AdminDashboardPage() {
         {activeTab === 'settings' && (
           <div className="space-y-6 animate-fadeIn">
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-[#B69A69] font-medium block">
+              <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-medium block">
                 Brand Configuration
               </span>
-              <h2 className="font-serif text-3xl font-light text-white mt-1">
+              <h2 className="font-serif text-3xl font-light text-[#F5EEDB] mt-1">
                 Showroom & Brand Identity
               </h2>
             </div>
 
-            <div className="bg-[#242321] border border-[#383633] p-6 rounded-sm text-xs space-y-4 max-w-2xl">
+            <div className="bg-[#141414] border border-[#2E261B] p-6 rounded-sm text-xs space-y-4 max-w-2xl shadow-xl">
               <div>
-                <span className="text-[#9B978F] block uppercase text-[10px]">Brand Name</span>
-                <span className="font-serif text-lg text-white font-medium">THE FIFTH WALL</span>
+                <span className="text-[#9E9788] block uppercase text-[10px]">Brand Name</span>
+                <span className="font-serif text-lg text-[#F5EEDB] font-medium">THE FIFTH WALL</span>
               </div>
               <div>
-                <span className="text-[#9B978F] block uppercase text-[10px]">Tagline</span>
-                <span className="text-white">Lighting. Interiors. Beyond.</span>
+                <span className="text-[#9E9788] block uppercase text-[10px]">Tagline</span>
+                <span className="text-[#F5EEDB]">Lighting. Interiors. Beyond.</span>
               </div>
               <div>
-                <span className="text-[#9B978F] block uppercase text-[10px]">Showroom Location</span>
-                <span className="text-white">1/803, Sector 1, Gomti Nagar Vistar, Lucknow</span>
+                <span className="text-[#9E9788] block uppercase text-[10px]">Showroom Location</span>
+                <span className="text-[#F5EEDB]">E1/803, Vardan Khand, Sector 1, Gomti Nagar, Lucknow, Uttar Pradesh 226010</span>
               </div>
               <div>
-                <span className="text-[#9B978F] block uppercase text-[10px]">Operating Hours</span>
-                <span className="text-white">Mon – Sat, 10:30 am – 8:00 pm</span>
+                <span className="text-[#9E9788] block uppercase text-[10px]">Operating Hours</span>
+                <span className="text-[#F5EEDB]">Mon – Sat, 10:30 am – 8:00 pm</span>
               </div>
               <div>
-                <span className="text-[#9B978F] block uppercase text-[10px]">Concierge Email & Phone</span>
-                <span className="text-white">studio@thefifthwall.in | +91 98765 43210</span>
+                <span className="text-[#9E9788] block uppercase text-[10px]">Concierge Email & Phone</span>
+                <span className="text-[#F5EEDB]">studio@thefifthwall.in | +91 91 98216 699</span>
               </div>
               <div>
-                <span className="text-[#9B978F] block uppercase text-[10px]">Complimentary Shipping Threshold</span>
-                <span className="text-[#B69A69] font-medium">₹4,999 (499900 paise)</span>
+                <span className="text-[#9E9788] block uppercase text-[10px]">Complimentary Shipping Threshold</span>
+                <span className="text-[#C5A059] font-medium">₹4,999 (499900 paise)</span>
               </div>
             </div>
           </div>

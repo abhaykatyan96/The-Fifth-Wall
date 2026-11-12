@@ -6,32 +6,32 @@ import { ArrowRight } from 'lucide-react';
 
 export default function EditorialSection() {
   return (
-    <section className="relative py-32 bg-[#151515] text-[#F6F3ED] overflow-hidden">
+    <section className="relative py-32 bg-[#060606] text-[#F5EEDB] border-t border-[#2E261B] overflow-hidden">
       {/* Background Architectural Accent */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <img
-          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2200&q=85"
+          src="/images/editorial-lounge.jpg"
           alt="Editorial Living Room Illumination"
           className="w-full h-full object-cover"
         />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-        <span className="text-xs uppercase tracking-[0.3em] text-[#B69A69] font-medium block">
+        <span className="text-xs uppercase tracking-[0.3em] text-[#C5A059] font-semibold block">
           The Fifth Wall Editorial
         </span>
 
-        <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-white leading-tight tracking-tight">
-          Light Is More Than <em>Illumination.</em>
+        <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-[#F5EEDB] leading-tight tracking-tight">
+          Light Is More Than <em className="text-[#C5A059]">Illumination.</em>
         </h2>
 
-        <div className="w-16 h-[1px] bg-[#B69A69] mx-auto" />
+        <div className="w-16 h-[1px] bg-[#C5A059] mx-auto" />
 
-        <p className="font-serif text-xl sm:text-2xl text-[#EAE3D8] font-light italic max-w-2xl mx-auto leading-relaxed">
+        <p className="font-serif text-xl sm:text-2xl text-[#E5C378] font-light italic max-w-2xl mx-auto leading-relaxed">
           &ldquo;It is the feeling of coming home, the warmth of a moment, and the character of a space.&rdquo;
         </p>
 
-        <p className="text-xs sm:text-sm text-[#D9CFC0] max-w-xl mx-auto font-light leading-relaxed">
+        <p className="text-xs sm:text-sm text-[#9E9788] max-w-xl mx-auto font-light leading-relaxed">
           Inspired by the ceiling—the often-overlooked Fifth Wall—our pieces exist at the intersection of sculptural art and architectural discipline, casting warmth that settles into the soul of your residence.
         </p>
 
